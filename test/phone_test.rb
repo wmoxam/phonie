@@ -127,4 +127,11 @@ class PhoneTest < Phoner::TestCase
     pn2 = Phoner::Phone.new '1234567', '91', '385'
     assert pn1 != pn2
   end
+
+  def test_validation_keeps_extension
+    number = "555-555-1212 ext 1234"
+    Phoner::Phone.valid?(number)
+    assert_equal "555-555-1212 ext 1234", number
+  end
 end
+

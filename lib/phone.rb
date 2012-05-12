@@ -53,7 +53,7 @@ module Phoner
     end
 
     def self.parse!(string, options={})
-        parse(string, options.merge(:raise_exception_on_error => true))
+      parse(string, options.merge(:raise_exception_on_error => true))
     end
 
     # create a new phone number by parsing a string
@@ -61,6 +61,7 @@ module Phoner
     def self.parse(string, options={})
       if string.present?
         Country.load
+        string = string.dup
         extension = extract_extension(string)
         string = normalize(string)
 
@@ -151,7 +152,7 @@ module Phoner
 
     # Formats the phone number.
     #
-    # if the method argument is a String, it is used as a format string, with the following fields being interpolated:  
+    # if the method argument is a String, it is used as a format string, with the following fields being interpolated:
     #
     # * %c - country_code (385)
     # * %a - area_code (91)
@@ -207,3 +208,4 @@ module Phoner
     end
   end
 end
+
