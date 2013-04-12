@@ -536,6 +536,10 @@
   :char_3_code: MU
   :name: Mauritius
   :international_dialing_prefix: '00'
+  :area_code: '[1-9]\d{2}'
+  :local_number_format: \d{4}
+  :number_format: \d{7} 
+  :mobile_format: (7\d{6}|87\d{5}|9\d{6}|421\d{4}|422\d{4}|423\d{4}|428\d{4}|429\d{4}|49\d{5}|25\d{5})
 '994':
   :country_code: '994'
   :national_dialing_prefix: 8
