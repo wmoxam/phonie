@@ -57,6 +57,10 @@
   :char_3_code: KR
   :name: Korea, Republic of
   :international_dialing_prefix: '001'
+  :area_code: 1[0-9]|2|3[0-3]|4[1-49]|5[0-5]|6[0-4]|70|8[0-8]
+  :local_number_format: \d{7}
+  :mobile_format: 1\d{8}
+  :number_format: 2\d{7}|\d{9}
 '223':
   :country_code: '223'
   :national_dialing_prefix: '0'
@@ -536,6 +540,10 @@
   :char_3_code: MU
   :name: Mauritius
   :international_dialing_prefix: '00'
+  :area_code: '[1-9]\d{2}'
+  :local_number_format: \d{4}
+  :number_format: \d{7} 
+  :mobile_format: (7\d{6}|87\d{5}|9\d{6}|421\d{4}|422\d{4}|423\d{4}|428\d{4}|429\d{4}|49\d{5}|25\d{5})
 '994':
   :country_code: '994'
   :national_dialing_prefix: 8
