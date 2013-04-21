@@ -1158,6 +1158,10 @@
   :char_3_code: RO
   :name: Romania
   :international_dialing_prefix: '00'
+  :area_code: 7|((2|3)(1|[2-7]\d))
+  :local_number_format: \d{6,8}
+  :mobile_format: 7\d{8}
+  :number_format: \d{9}
 '351':
   :country_code: '351'
   :national_dialing_prefix: None
