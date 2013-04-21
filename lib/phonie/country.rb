@@ -21,17 +21,20 @@ module Phonie
 
     def self.find_all_by_phone_code(code)
       return [] if code.nil?
+      self.load unless @@all.present?
       @@all.select {|c| c.country_code == code }
     end
 
     def self.find_by_country_code(code)
       return nil if code.nil?
+      self.load unless @@all.present?
       @@all.each {|c| return c if c.char_3_code.downcase == code.downcase }
       nil
     end
 
     def self.find_by_name(name)
       return nil if name.nil?
+      self.load unless @@all.present?
       @@all.each {|c| return c if c.name.downcase == name.downcase }
       nil
     end
