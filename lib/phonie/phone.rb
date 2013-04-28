@@ -15,6 +15,8 @@ require 'active_model/validations'
 #
 module Phonie
   class Phone
+    EXTENSION = /[ ]*(ext|ex|x|xt|#|:)+[^0-9]*\(*([-0-9]{1,})\)*#?$/i
+
     attr_accessor :country_code, :area_code, :number, :extension, :country
 
     cattr_accessor :default_country_code
@@ -167,30 +169,13 @@ module Phonie
 
     # fix string so it's easier to parse, remove extra characters etc.
     def self.normalize(string_with_number)
-      string_with_number.sub(extension_regex, '').gsub(/\(0\)|[^0-9+]/, '').gsub(/^00/, '+')
-    end
-
-    def self.extension_regex
-      /[ ]*(ext|ex|x|xt|#|:)+[^0-9]*\(*([-0-9]{1,})\)*#?$/i
+      string_with_number.sub(EXTENSION, '').gsub(/\(0\)|[^0-9+]/, '').gsub(/^00/, '+')
     end
 
     # pull off anything that look like an extension
-    #
     def self.extract_extension(string)
-      return unless string
-      if string.match extension_regex
-        return Regexp.last_match[2]
-      end
-      #
-      # We already returned any recognizable extension.
-      # However, we might still have extra junk to the right
-      # of the phone number proper, so just chop it off.
-      #
-      idx = string.rindex(/[0-9]/)
-      return if idx.nil?
-      return if idx == (string.length - 1)  # at the end
-      string.slice!((idx+1)..-1)            # chop it
-      return
+      return unless string && string.match(EXTENSION)
+      Regexp.last_match[2]
     end
 
     def format_number(fmt)
