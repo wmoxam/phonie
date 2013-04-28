@@ -62,7 +62,7 @@ module Phonie
     # create a new phone number by parsing a string
     # the format of the string is detect automatically (from FORMATS)
     def self.parse(string, options={})
-      return nil unless string.present?
+      return unless string.present?
 
       Country.load
 
@@ -89,8 +89,7 @@ module Phonie
 
     def self.is_mobile?(string, options = {})
       pn = parse(string, options)
-      return false if pn.nil?
-      pn.is_mobile?
+      pn && pn.is_mobile?
     end
 
     def area_code_long
@@ -178,10 +177,9 @@ module Phonie
     # pull off anything that look like an extension
     #
     def self.extract_extension(string)
-      return nil if string.nil?
+      return unless string
       if string.match extension_regex
-        extension = $2
-        return extension
+        return $2
       end
       #
       # We already returned any recognizable extension.
@@ -189,21 +187,20 @@ module Phonie
       # of the phone number proper, so just chop it off.
       #
       idx = string.rindex(/[0-9]/)
-      return nil if idx.nil?
-      return nil if idx == (string.length - 1)      # at the end
-      string.slice!((idx+1)..-1)                    # chop it
-      return nil
+      return if idx.nil?
+      return if idx == (string.length - 1)  # at the end
+      string.slice!((idx+1)..-1)            # chop it
+      return
     end
 
     def format_number(fmt)
-      result = fmt.gsub("%c", country_code || "").
-             gsub("%a", area_code || "").
-             gsub("%A", area_code_long || "").
-             gsub("%n", number || "").
-             gsub("%f", number1 || "").
-             gsub("%l", number2 || "").
-             gsub("%x", extension || "")
-      return result
+      fmt.gsub("%c", country_code || "").
+        gsub("%a", area_code || "").
+        gsub("%A", area_code_long || "").
+        gsub("%n", number || "").
+        gsub("%f", number1 || "").
+        gsub("%l", number2 || "").
+        gsub("%x", extension || "")
     end
   end
 end
