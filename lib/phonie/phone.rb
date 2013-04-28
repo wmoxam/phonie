@@ -74,13 +74,9 @@ module Phonie
       extension = extract_extension(string)
       normalized = normalize(string)
 
-      parts = split_to_parts(normalized, options)
-
-      pn = Phone.new(parts) if parts
-      if pn.present? and extension.present?
-        pn.extension = extension
-      end
-      pn
+      return unless parts = split_to_parts(normalized, options)
+      parts[:extension] = extension
+      new(parts)
     end
 
     # is this string a valid phone number?
