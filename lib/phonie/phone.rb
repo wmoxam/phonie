@@ -130,7 +130,7 @@ module Phonie
     #   pn.format(:europe)
     def format(fmt)
       if fmt.is_a?(Symbol)
-        raise "The format #{fmt} doesn't exist'" unless named_formats.has_key?(fmt)
+        raise ArgumentError.new("The format #{fmt} doesn't exist") unless named_formats.has_key?(fmt)
         format_number named_formats[fmt]
       else
         format_number(fmt)
