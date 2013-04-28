@@ -48,14 +48,14 @@ module Phonie
         keys = {:number => 0, :area_code => 1, :country_code => 2, :extension => 3, :country => 4}
       end
 
-      self.number = hash_or_args[ keys[:number] ]
-      self.area_code = hash_or_args[ keys[:area_code] ] || self.default_area_code
+      self.number       = hash_or_args[ keys[:number] ]
+      self.area_code    = hash_or_args[ keys[:area_code] ] || self.default_area_code
       self.country_code = hash_or_args[ keys[:country_code] ] || self.default_country_code
-      self.extension = hash_or_args[ keys[:extension] ]
-      self.country = hash_or_args[ keys[:country] ]
+      self.extension    = hash_or_args[ keys[:extension] ]
+      self.country      = hash_or_args[ keys[:country] ]
     end
 
-    def self.parse!(string, options={})
+    def self.parse!(string, options = {})
       pn = parse(string, options)
       raise ArgumentError.new("#{string} is not a valid phone number") unless pn && pn.valid?
       pn
@@ -63,16 +63,16 @@ module Phonie
 
     # create a new phone number by parsing a string
     # the format of the string is detect automatically (from FORMATS)
-    def self.parse(string, options={})
+    def self.parse(string, options = {})
       return unless string.present?
+
+      options[:country_code] ||= self.default_country_code
+      options[:area_code]    ||= self.default_area_code
 
       Country.load
 
       extension = extract_extension(string)
       normalized = normalize(string)
-
-      options[:country_code] ||= self.default_country_code
-      options[:area_code] ||= self.default_area_code
 
       parts = split_to_parts(normalized, options)
 
