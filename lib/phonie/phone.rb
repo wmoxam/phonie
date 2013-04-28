@@ -1,3 +1,7 @@
+require 'active_model/naming'
+require 'active_model/translation'
+require 'active_model/validations'
+
 # An object representing a phone number.
 #
 # The phone number is recorded in 3 separate parts:
@@ -29,6 +33,11 @@ module Phonie
       :us => "(%a) %f-%l"
     }
 
+    include ActiveModel::Validations
+    validates :country_code, :presence => true
+    validates :area_code, :presence => true
+    validates :number, :presence => true
+
     def initialize(*hash_or_args)
       if hash_or_args.first.is_a?(Hash)
         hash_or_args = hash_or_args.first
@@ -42,11 +51,6 @@ module Phonie
       self.country_code = hash_or_args[ keys[:country_code] ] || self.default_country_code
       self.extension = hash_or_args[ keys[:extension] ]
       self.country = hash_or_args[ keys[:country] ]
-
-      # Santity checks
-      raise "Must enter number" if self.number.blank?
-      raise "Must enter area code or set default area code" if self.area_code.blank?
-      raise "Must enter country code or set default country code" if self.country_code.blank?
     end
 
     def self.parse!(string, options={})
@@ -77,11 +81,8 @@ module Phonie
 
     # is this string a valid phone number?
     def self.valid?(string, options = {})
-      begin
-        parse(string, options).present?
-      rescue
-        false  # don't raise exceptions on parse errors
-      end
+      pn = parse(string, options)
+      pn && pn.valid?
     end
 
     def self.is_mobile?(string, options = {})
@@ -157,7 +158,7 @@ module Phonie
 
     # Formats the phone number.
     #
-    # if the method argument is a String, it is used as a format string, with the following fields being interpolated:  
+    # if the method argument is a String, it is used as a format string, with the following fields being interpolated:
     #
     # * %c - country_code (385)
     # * %a - area_code (91)

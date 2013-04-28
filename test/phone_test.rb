@@ -9,18 +9,18 @@ class PhoneTest < Phonie::TestCase
   def test_number_without_country_code_initialize
     Phonie::Phone.default_country_code = nil
 
-    assert_raise RuntimeError do
-      pn = Phonie::Phone.new '5125486', '91'
-    end
+    pn = Phonie::Phone.new '5125486', '91'
+    assert !pn.valid?
+    assert_equal ["can't be blank"], pn.errors[:country_code]
   end
 
-  def test_number_without_country_and_area_code_initialize
-    Phonie::Phone.default_country_code = nil
+  def test_number_without_area_code_initialize
+    Phonie::Phone.default_country_code = '1'
     Phonie::Phone.default_area_code = nil
 
-    assert_raise RuntimeError do
-      pn = Phonie::Phone.new '451588'
-    end
+    pn = Phonie::Phone.new '451588'
+    assert !pn.valid?
+    assert_equal ["can't be blank"], pn.errors[:area_code]
   end
 
   def test_number_with_default_area_code_initialize
@@ -112,8 +112,8 @@ class PhoneTest < Phonie::TestCase
   end
 
   def test_doesnt_validate
-    assert_equal Phonie::Phone.valid?('asdas'), false
-    assert_equal Phonie::Phone.valid?('38591512548678'), false
+    assert !Phonie::Phone.valid?('asdas')
+    assert !Phonie::Phone.valid?('38591512548678')
   end
 
   def test_comparison_true
