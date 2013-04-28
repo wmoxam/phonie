@@ -54,7 +54,9 @@ module Phonie
     end
 
     def self.parse!(string, options={})
-        parse(string, options.merge(:raise_exception_on_error => true))
+      pn = parse(string, options)
+      raise ArgumentError.new("#{string} is not a valid phone number") unless pn && pn.valid?
+      pn
     end
 
     # create a new phone number by parsing a string
@@ -92,16 +94,11 @@ module Phonie
     end
 
     private
+
     # split string into hash with keys :country_code, :area_code and :number
     def self.split_to_parts(string, options = {})
       country = Country.detect(string, options[:country_code], options[:area_code])
-
-      if country.nil?
-        raise "Could not determine country" if options[:raise_exception_on_error]
-        return nil
-      end
-
-      country.number_parts(string, options[:area_code])
+      country && country.number_parts(string, options[:area_code])
     end
 
     # fix string so it's easier to parse, remove extra characters etc.

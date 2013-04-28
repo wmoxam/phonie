@@ -61,7 +61,7 @@ class PhoneTest < Phonie::TestCase
 
     assert_nil Phonie::Phone.parse "0915125486"
 
-    assert_raise RuntimeError do
+    assert_raise ArgumentError do
       Phonie::Phone.parse! "0915125486"
     end
   end
@@ -71,7 +71,7 @@ class PhoneTest < Phonie::TestCase
 
     assert_nil Phonie::Phone.parse "091/512-5486"
 
-    assert_raise RuntimeError do
+    assert_raise ArgumentError do
       Phonie::Phone.parse! "091/512-5486"
     end
   end
