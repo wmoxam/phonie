@@ -93,45 +93,6 @@ module Phonie
       pn.is_mobile?
     end
 
-    private
-
-    # split string into hash with keys :country_code, :area_code and :number
-    def self.split_to_parts(string, options = {})
-      country = Country.detect(string, options[:country_code], options[:area_code])
-      country && country.number_parts(string, options[:area_code])
-    end
-
-    # fix string so it's easier to parse, remove extra characters etc.
-    def self.normalize(string_with_number)
-      string_with_number.sub(extension_regex, '').gsub(/\(0\)|[^0-9+]/, '').gsub(/^00/, '+')
-    end
-
-    def self.extension_regex
-      /[ ]*(ext|ex|x|xt|#|:)+[^0-9]*\(*([-0-9]{1,})\)*#?$/i
-    end
-
-    # pull off anything that look like an extension
-    #
-    def self.extract_extension(string)
-      return nil if string.nil?
-      if string.match extension_regex
-        extension = $2
-        return extension
-      end
-      #
-      # We already returned any recognizable extension.
-      # However, we might still have extra junk to the right
-      # of the phone number proper, so just chop it off.
-      #
-      idx = string.rindex(/[0-9]/)
-      return nil if idx.nil?
-      return nil if idx == (string.length - 1)      # at the end
-      string.slice!((idx+1)..-1)                    # chop it
-      return nil
-    end
-
-    public # instance methods
-
     def area_code_long
       "0" + area_code if area_code
     end
@@ -198,6 +159,41 @@ module Phonie
     end
 
     private
+
+    # split string into hash with keys :country_code, :area_code and :number
+    def self.split_to_parts(string, options = {})
+      country = Country.detect(string, options[:country_code], options[:area_code])
+      country && country.number_parts(string, options[:area_code])
+    end
+
+    # fix string so it's easier to parse, remove extra characters etc.
+    def self.normalize(string_with_number)
+      string_with_number.sub(extension_regex, '').gsub(/\(0\)|[^0-9+]/, '').gsub(/^00/, '+')
+    end
+
+    def self.extension_regex
+      /[ ]*(ext|ex|x|xt|#|:)+[^0-9]*\(*([-0-9]{1,})\)*#?$/i
+    end
+
+    # pull off anything that look like an extension
+    #
+    def self.extract_extension(string)
+      return nil if string.nil?
+      if string.match extension_regex
+        extension = $2
+        return extension
+      end
+      #
+      # We already returned any recognizable extension.
+      # However, we might still have extra junk to the right
+      # of the phone number proper, so just chop it off.
+      #
+      idx = string.rindex(/[0-9]/)
+      return nil if idx.nil?
+      return nil if idx == (string.length - 1)      # at the end
+      string.slice!((idx+1)..-1)                    # chop it
+      return nil
+    end
 
     def format_number(fmt)
       result = fmt.gsub("%c", country_code || "").
