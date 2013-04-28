@@ -179,7 +179,7 @@ module Phonie
     def self.extract_extension(string)
       return unless string
       if string.match extension_regex
-        return $2
+        return Regexp.last_match[2]
       end
       #
       # We already returned any recognizable extension.
