@@ -6,3 +6,5 @@ require "phonie/railties/validator"
 
 module Phonie
 end
+
+Phonie::Country.load

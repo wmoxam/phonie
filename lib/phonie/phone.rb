@@ -69,8 +69,6 @@ module Phonie
       options[:country_code] ||= self.default_country_code
       options[:area_code]    ||= self.default_area_code
 
-      Country.load
-
       extension = extract_extension(string)
       normalized = normalize(string)
 
