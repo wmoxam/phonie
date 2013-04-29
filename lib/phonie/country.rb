@@ -66,12 +66,12 @@ module Phonie
     end
 
     def parse(number, default_area_code)
-      parts = if md = number.match(number_regex)
-        {:area_code => default_area_code, :number => md[1]}
+      parts = if md = number.match(full_number_regex)
+        {:area_code => md[2], :number => md[-1]}
       elsif md = number.match(area_code_number_regex)
         {:area_code => md[1], :number => md[-1]}
-      elsif md = number.match(full_number_regex)
-        {:area_code => md[2], :number => md[-1]}
+      elsif md = number.match(number_regex)
+        {:area_code => default_area_code, :number => md[1]}
       else
         {}
       end
