@@ -65,32 +65,21 @@ module Phonie
       string =~ number_regex && default_area_code =~ area_code_regex
     end
 
-    def number_parts(number, default_area_code)
-      number_part = if default_area_code
-        number.match(number_regex)
-        $1
+    def parse(number, default_area_code)
+      parts = if md = number.match(number_regex)
+        {:area_code => default_area_code, :number => md[1]}
+      elsif md = number.match(area_code_number_regex)
+        {:area_code => md[1], :number => md[-1]}
+      elsif md = number.match(full_number_regex)
+        {:area_code => md[2], :number => md[-1]}
       else
-        nil
+        {}
       end
 
-      if number_part.nil?
-        matches = number.match(area_code_number_regex)
-        area_part = $1
-        number_part = matches.to_a.last
-      end
-
-      if number_part.nil?
-        matches = number.match(full_number_regex)
-        country_part, area_part = $1, $2
-        number_part = matches.to_a.last
-      end
-
-      area_part ||= default_area_code
-
-      raise "Could not determine area code" if area_part.nil?
-      raise "Could not determine number" if number_part.nil?
-
-      {:number => number_part, :area_code => area_part, :country_code => country_code, :country => self}
+      parts.merge(
+        :country => self,
+        :country_code => country_code
+      )
     end
 
     private

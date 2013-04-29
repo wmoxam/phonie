@@ -158,7 +158,7 @@ module Phonie
     # split string into hash with keys :country_code, :area_code and :number
     def self.split_to_parts(string, options = {})
       country = Country.detect(string, options[:country_code], options[:area_code])
-      country && country.number_parts(string, options[:area_code])
+      country && country.parse(string, options[:area_code])
     end
 
     # fix string so it's easier to parse, remove extra characters etc.
