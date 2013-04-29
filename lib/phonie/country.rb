@@ -21,28 +21,24 @@ module Phonie
     end
 
     def self.find_by_country_code(code)
-      return nil if code.nil?
-      all.each {|c| return c if c.char_3_code.downcase == code.downcase }
-      nil
+      return if code.nil?
+      all.find {|c| c.char_3_code.downcase == code.downcase }
     end
 
     def self.find_by_name(name)
-      return nil if name.nil?
-      all.each {|c| return c if c.name.downcase == name.downcase }
-      nil
+      return if name.nil?
+      all.find {|c| c.name.downcase == name.downcase }
     end
 
     # detect country from the string entered
     def self.detect(string, default_country_code, default_area_code)
-      Country.find_all_by_phone_code(default_country_code).each do |country|
-        return country if country.matches_local_number?(string, default_area_code)
+      # use the default_country_code to try for a quick match
+      country = find_all_by_phone_code(default_country_code).find do |country|
+        country.matches_local_number?(string, default_area_code)
       end
 
-      # find if the number has a country code
-      all.each do |country|
-        return country if country.matches_full_number?(string)
-      end
-      return nil
+      # then search all for a full match
+      country || all.find {|country| country.matches_full_number?(string) }
     end
 
     def to_s
