@@ -4,7 +4,7 @@ module Phonie
       data_file = File.join(File.dirname(__FILE__), 'data', 'phone_countries.yml')
 
       all = []
-      YAML.load(File.read(data_file)).values.each do |c|
+      YAML.load(File.read(data_file)).each do |c|
         next unless c[:area_code] && c[:local_number_format]
         all << Country.new(c[:name], c[:country_code], c[:char_2_code], c[:iso_3166_code], c[:area_code], c[:local_number_format], c[:mobile_format], c[:full_number_length], c[:number_format])
       end

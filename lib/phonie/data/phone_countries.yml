@@ -1,5 +1,5 @@
 ---
-'676':
+-
   :country_code: '676'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -10,7 +10,7 @@
   :local_number_format: \d{3}
   :mobile_format: 8[789]\d{3}
   :number_format: \d{5}
-'54':
+-
   :country_code: '54'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -21,7 +21,7 @@
   :local_number_format: \d{6,8}
   :mobile_format: 9\d{10}
   :number_format: '[1-8]\d{9}|9\d{10}'
-'506':
+-
   :country_code: '506'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -32,7 +32,7 @@
   :local_number_format: \d{7}
   :mobile_format: 8\d{7}
   :number_format: \d{8}
-'251':
+-
   :country_code: '251'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -43,14 +43,14 @@
   :local_number_format: \d{7}
   :mobile_format: 91\d{7}
   :number_format: \d{9}
-'590':
+-
   :country_code: '590'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: GP
   :name: Guadeloupe
   :international_dialing_prefix: '00'
-'82':
+-
   :country_code: '82'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -61,14 +61,14 @@
   :local_number_format: \d{7}
   :mobile_format: 1\d{8}
   :number_format: 2\d{7}|\d{9}
-'223':
+-
   :country_code: '223'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: ML
   :name: Mali
   :international_dialing_prefix: '00'
-'420':
+-
   :country_code: '420'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -79,35 +79,35 @@
   :local_number_format: \d{7,8}
   :mobile_format: '[78]\d{8}'
   :number_format: \d{9}
-'252':
+-
   :country_code: '252'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: SO
   :name: Somalia
   :international_dialing_prefix: '00'
-'677':
+-
   :country_code: '677'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: SB
   :name: Solomon Islands
   :international_dialing_prefix: '00'
-'421':
+-
   :country_code: '421'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: SK
   :name: Slovakia
   :international_dialing_prefix: '00'
-'507':
+-
   :country_code: '507'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: PA
   :name: Panama
   :international_dialing_prefix: '00'
-'591':
+-
   :country_code: '591'
   :national_dialing_prefix: '10'
   :char_2_code: '10'
@@ -118,28 +118,28 @@
   :local_number_format: \d{7}
   :mobile_format: 7\d{7}
   :number_format: \d{8}
-'224':
+-
   :country_code: '224'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: GN
   :name: Guinea
   :international_dialing_prefix: '00'
-'84':
+-
   :country_code: '84'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: VN
   :name: Viet Nam
   :international_dialing_prefix: '00'
-'678':
+-
   :country_code: '678'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: VU
   :name: Vanuatu
   :international_dialing_prefix: '00'
-'27':
+-
   :country_code: '27'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -150,14 +150,14 @@
   :local_number_format: \d{6,7}
   :mobile_format: 7\d{8}|8[1-9]\d{7}
   :number_format: \d{9}
-'508':
+-
   :country_code: '508'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: PM
   :name: Saint Pierre And Miquelon
   :international_dialing_prefix: '00'
-'55':
+-
   :country_code: '55'
   :national_dialing_prefix: '14'
   :char_2_code: '14'
@@ -168,14 +168,14 @@
   :local_number_format: \d{7,8}
   :mobile_format: 11[6789]\d{7}
   :number_format: \d{10}
-'253':
+-
   :country_code: '253'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: DJ
   :name: Djibouti
   :international_dialing_prefix: '00'
-'592':
+-
   :country_code: '592'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -186,14 +186,14 @@
   :local_number_format: \d{4}
   :mobile_format: 6\d{6}
   :number_format: \d{7}
-'225':
+-
   :country_code: '225'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: CI
   :name: CÃ´te D'Ivoire
   :international_dialing_prefix: '00'
-'56':
+-
   :country_code: '56'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -204,21 +204,21 @@
   :local_number_format: \d{7,8}
   :mobile_format: 9\d{8}
   :number_format: \d{9}
-'679':
+-
   :country_code: '679'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: FJ
   :name: Fiji
   :international_dialing_prefix: '00'
-'509':
+-
   :country_code: '509'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: HT
   :name: Haiti
   :international_dialing_prefix: '00'
-'593':
+-
   :country_code: '593'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -229,7 +229,7 @@
   :local_number_format: \d{7}
   :mobile_format: '[89]\d{7}'
   :number_format: \d{8}
-'254':
+-
   :country_code: '254'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -240,154 +240,154 @@
   :local_number_format: \d{5,7}
   :mobile_format: 7\d{8}
   :number_format: \d{7,9}
-'226':
+-
   :country_code: '226'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: BF
   :name: Burkina Faso
   :international_dialing_prefix: '00'
-'423':
+-
   :country_code: '423'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: LI
   :name: Liechtenstein
   :international_dialing_prefix: '00'
-'255':
+-
   :country_code: '255'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: TZ
   :name: Tanzania, United Republic of
   :international_dialing_prefix: '00'
-'227':
+-
   :country_code: '227'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: NE
   :name: Niger
   :international_dialing_prefix: '00'
-'594':
+-
   :country_code: '594'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: GF
   :name: French Guiana
   :international_dialing_prefix: '00'
-'86':
+-
   :country_code: '86'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: CN
   :name: China
   :international_dialing_prefix: '00'
-'960':
+-
   :country_code: '960'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: MV
   :name: Maldives
   :international_dialing_prefix: '00'
-'57':
+-
   :country_code: '57'
   :national_dialing_prefix: '5'
   :char_2_code: '5'
   :iso_3166_code: CO
   :name: Colombia
   :international_dialing_prefix: '00'
-'58':
+-
   :country_code: '58'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: VE
   :name: Venezuela, Bolivarian Republic of
   :international_dialing_prefix: '00'
-'256':
+-
   :country_code: '256'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: UG
   :name: Uganda
   :international_dialing_prefix: '00'
-'228':
+-
   :country_code: '228'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: TG
   :name: Togo
   :international_dialing_prefix: '00'
-'595':
+-
   :country_code: '595'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: PY
   :name: Paraguay
   :international_dialing_prefix: '00'
-'961':
+-
   :country_code: '961'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: LB
   :name: Lebanon
   :international_dialing_prefix: '00'
-'596':
+-
   :country_code: '596'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: MQ
   :name: Martinique
   :international_dialing_prefix: '00'
-'257':
+-
   :country_code: '257'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: BI
   :name: Burundi
   :international_dialing_prefix: '00'
-'229':
+-
   :country_code: '229'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: BJ
   :name: Benin
   :international_dialing_prefix: '00'
-'962':
+-
   :country_code: '962'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: JO
   :name: Jordan
   :international_dialing_prefix: '00'
-'963':
+-
   :country_code: '963'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: SY
   :name: Syrian Arab Republic
   :international_dialing_prefix: '00'
-'597':
+-
   :country_code: '597'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: SR
   :name: Suriname
   :international_dialing_prefix: '00'
-'680':
+-
   :country_code: '680'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: PW
   :name: Palau
   :international_dialing_prefix: '00'
-'258':
+-
   :country_code: '258'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: MZ
   :name: Mozambique
   :international_dialing_prefix: '00'
-'30':
+-
   :country_code: '30'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -397,14 +397,14 @@
   :area_code: 21|28[23]1|2661|2521|2[34568]1|2431|\d{2,4}?
   :local_number_format: \d{6,8}
   :number_format: \d{10}
-'681':
+-
   :country_code: '681'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: WF
   :name: Wallis and Futuna
   :international_dialing_prefix: '00'
-'598':
+-
   :country_code: '598'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -415,14 +415,14 @@
   :local_number_format: \d{6,7}
   :mobile_format: 9\d{7}
   :number_format: \d{8}
-'992':
+-
   :country_code: '992'
   :national_dialing_prefix: '8'
   :char_2_code: '8'
   :iso_3166_code: TJ
   :name: Tajikistan
   :international_dialing_prefix: '810'
-'31':
+-
   :country_code: '31'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -433,21 +433,21 @@
   :local_number_format: \d{5,8}
   :mobile_format: 6\d{8}
   :number_format: \d{9}
-'850':
+-
   :country_code: '850'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: KP
   :name: Korea, Democratic People's Republic Of
   :international_dialing_prefix: '00'
-'964':
+-
   :country_code: '964'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: IQ
   :name: Iraq
   :international_dialing_prefix: '00'
-'370':
+-
   :country_code: '370'
   :national_dialing_prefix: '8'
   :char_2_code: '8'
@@ -458,21 +458,21 @@
   :local_number_format: \d{5}
   :mobile_format: 6\d{7}
   :number_format: '[3-9]\d{7}'
-'993':
+-
   :country_code: '993'
   :national_dialing_prefix: '8'
   :char_2_code: '8'
   :iso_3166_code: TM
   :name: Turkmenistan
   :international_dialing_prefix: '810'
-'599':
+-
   :country_code: '599'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: AN
   :name: Netherlands Antilles
   :international_dialing_prefix: '00'
-'32':
+-
   :country_code: '32'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -483,14 +483,14 @@
   :local_number_format: \d{5,8}
   :mobile_format: '[4]\d{8}'
   :number_format: '[4]\d{8}|[1-9]\d{7}'
-'965':
+-
   :country_code: '965'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: KW
   :name: Kuwait
   :international_dialing_prefix: '00'
-'371':
+-
   :country_code: '371'
   :national_dialing_prefix: '8'
   :char_2_code: '8'
@@ -501,21 +501,21 @@
   :local_number_format: \d{6}
   :mobile_format: 2\d{7}
   :number_format: '[2|6]\d{7}'
-'682':
+-
   :country_code: '682'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: CK
   :name: Cook Islands
   :international_dialing_prefix: '00'
-'60':
+-
   :country_code: '60'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: MY
   :name: Malaysia
   :international_dialing_prefix: '00'
-'966':
+-
   :country_code: '966'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -526,14 +526,14 @@
   :local_number_format: \d{7,8}
   :mobile_format: 5\d{8}
   :number_format: '[1-46-9]\d{7}|5\d{8}'
-'683':
+-
   :country_code: '683'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: NU
   :name: Niue
   :international_dialing_prefix: '00'
-'230':
+-
   :country_code: '230'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -544,7 +544,7 @@
   :local_number_format: \d{4}
   :number_format: \d{7}
   :mobile_format: (7\d{6}|87\d{5}|9\d{6}|421\d{4}|422\d{4}|423\d{4}|428\d{4}|429\d{4}|49\d{5}|25\d{5})
-'994':
+-
   :country_code: '994'
   :national_dialing_prefix: 8
   :char_2_code: 8
@@ -555,14 +555,14 @@
   :local_number_format: \d{7}
   :mobile_format: (40|44|50|51|55|60|70|77)\d{7}
   :number_format: \d{9}
-'852':
+-
   :country_code: '852'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: HK
   :name: Hong Kong
   :international_dialing_prefix: '001'
-'372':
+-
   :country_code: '372'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -573,7 +573,7 @@
   :local_number_format: \d{6,7}
   :mobile_format: 5\d{7}
   :number_format: 5\d{7}|[1-46-9]\d{6}
-'61':
+-
   :country_code: '61'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -584,7 +584,7 @@
   :local_number_format: \d{8}
   :mobile_format: '[4]\d{8}'
   :number_format: \d{9}
-'880':
+-
   :country_code: '880'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -595,28 +595,28 @@
   :local_number_format: \d{3,7}
   :mobile_format: '[1]\d{7,9}'
   :number_format: \d{7,10}
-'967':
+-
   :country_code: '967'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: YE
   :name: Yemen
   :international_dialing_prefix: '00'
-'90':
+-
   :country_code: '90'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: TR
   :name: Turkey
   :international_dialing_prefix: '00'
-'373':
+-
   :country_code: '373'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: MD
   :name: Moldova, Republic of
   :international_dialing_prefix: '00'
-'33':
+-
   :country_code: '33'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -627,7 +627,7 @@
   :local_number_format: \d{8}
   :mobile_format: '[67]\d{8}'
   :number_format: \d{9}
-'995':
+-
   :country_code: '995'
   :national_dialing_prefix: 8*
   :char_2_code: 8*
@@ -638,35 +638,35 @@
   :local_number_format: \d{6,7}
   :mobile_format: '[57]\d{8}'
   :number_format: \d{9}
-'853':
+-
   :country_code: '853'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: MO
   :name: Macao
   :international_dialing_prefix: '00'
-'231':
+-
   :country_code: '231'
   :national_dialing_prefix: '22'
   :char_2_code: '22'
   :iso_3166_code: LR
   :name: Liberia
   :international_dialing_prefix: '00'
-'62':
+-
   :country_code: '62'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: ID
   :name: Indonesia
   :international_dialing_prefix: '001'
-'260':
+-
   :country_code: '260'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: ZM
   :name: Zambia
   :international_dialing_prefix: '00'
-'34':
+-
   :country_code: '34'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -677,21 +677,21 @@
   :local_number_format: '\d{6,8}'
   :mobile_format: '[67]\d{8}'
   :number_format: '\d{9}'
-'232':
+-
   :country_code: '232'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: SL
   :name: Sierra Leone
   :international_dialing_prefix: '00'
-'685':
+-
   :country_code: '685'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: WS
   :name: Samoa
   :international_dialing_prefix: '00'
-'63':
+-
   :country_code: '63'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -702,21 +702,21 @@
   :local_number_format: \d{7}
   :mobile_format: 9\d{9}
   :number_format: '[1-8]\d{8}|9\d{9}'
-'968':
+-
   :country_code: '968'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: OM
   :name: Oman
   :international_dialing_prefix: '00'
-'996':
+-
   :country_code: '996'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: KG
   :name: Kyrgyzstan
   :international_dialing_prefix: '00'
-'374':
+-
   :country_code: '374'
   :national_dialing_prefix: '8'
   :char_2_code: '8'
@@ -727,7 +727,7 @@
   :local_number_format: \d{5,7}
   :mobile_format: '[5679]\d{7}'
   :number_format: \d{8}
-'91':
+-
   :country_code: '91'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -738,7 +738,7 @@
   :local_number_format: \d{6,7}
   :mobile_format: '[789]\d{9}'
   :number_format: \d{10}
-'92':
+-
   :country_code: '92'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -749,7 +749,7 @@
   :local_number_format: \d{6,7}
   :mobile_format: 3\d{9}
   :number_format: '[124-9]\d{8}|3\d{9}'
-'64':
+-
   :country_code: '64'
   :national_dialing_prefix: 0
   :char_2_code: 0
@@ -761,21 +761,21 @@
   :local_number_format: \d{7,9}
   :mobile_format: 2\d{7,9}
   :number_format: \d{8,10}
-'855':
+-
   :country_code: '855'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: KH
   :name: Cambodia
   :international_dialing_prefix: '00'
-'261':
+-
   :country_code: '261'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: MG
   :name: Madagascar
   :international_dialing_prefix: '00'
-1a:
+-
   :country_code: '1'
   :national_dialing_prefix: '1'
   :char_2_code: '1'
@@ -785,7 +785,7 @@
   :area_code: 800|822|833|844|855|866|877|880|881|882|883|884|885|886|887|888|889|900|456|500|533|544|566|700|710|205|251|256|334|659|938|907|250|480|520|602|623|928|327|479|501|870|209|213|310|323|341|369|408|415|424|442|510|530|559|562|619|626|627|628|650|657|661|669|707|714|747|760|764|805|818|831|858|909|916|925|935|949|951|303|719|720|970|203|475|860|959|302|202|239|305|321|352|386|407|561|689|727|754|772|786|813|850|863|904|941|954|229|404|470|478|678|706|762|770|912|808|208|217|224|309|312|331|447|464|618|630|708|730|773|779|815|847|872|219|260|317|574|765|812|319|515|563|641|712|316|620|785|913|270|364|502|606|859|225|318|337|504|985|207|227|240|301|410|443|667|339|351|413|508|617|774|781|857|978|231|248|269|313|517|586|616|679|734|810|906|947|989|218|320|507|612|651|763|952|228|601|662|769|314|417|557|573|636|660|816|975|406|308|402|531|702|775|603|201|551|609|732|848|856|862|908|973|505|575|212|315|347|516|518|585|607|631|646|716|718|845|914|917|929|252|336|704|828|910|919|980|984|701|216|234|283|330|380|419|440|513|567|614|740|937|405|539|580|918|458|503|541|971|215|267|272|412|445|484|570|582|610|717|724|814|835|878|401|803|843|864|605|423|615|731|865|901|931|210|214|254|281|325|361|409|430|432|469|512|682|713|737|806|817|830|832|903|915|936|940|956|972|979|385|435|801|802|276|434|540|571|703|757|804|206|253|360|425|509|564|304|681|262|274|414|534|608|715|920|307
   :local_number_format: \d{7}
   :number_format: \d{10}
-1b:
+-
   :country_code: '1'
   :national_dialing_prefix: '1'
   :char_2_code: '1'
@@ -795,7 +795,7 @@
   :area_code: 403|587|780|825|236|250|604|672|778|204|431|506|709|902|226|249|289|343|365|416|437|519|613|647|705|807|905|902|418|438|450|514|579|581|819|873|306|639|867
   :local_number_format: \d{7}
   :number_format: \d{10}
-1c:
+-
   :country_code: '1'
   :national_dialing_prefix: '1'
   :char_2_code: '1'
@@ -805,7 +805,7 @@
   :area_code: '671'
   :local_number_format: \d{7}
   :number_format: \d{10}
-1d:
+-
   :country_code: '1'
   :national_dialing_prefix: '1'
   :char_2_code: '1'
@@ -816,7 +816,7 @@
   :local_number_format: \d{7}
   :number_format: \d{10}
   :mobile_format: (357|359|375|395|4[0-57-9]\d|46[02-9]|5[1-9]\d|50[013-9]|636|646|727)\d{4}
-'375':
+-
   :country_code: '375'
   :national_dialing_prefix: '8'
   :char_2_code: '8'
@@ -827,7 +827,7 @@
   :local_number_format: \d{5,7}
   :mobile_format: (25|29|33|44)\d{7}
   :number_format: \d{9}
-'233':
+-
   :country_code: '233'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -838,42 +838,42 @@
   :local_number_format: \d{7}
   :mobile_format: 2\d{8}|54\d{7}
   :number_format: \d{9}
-'686':
+-
   :country_code: '686'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: KI
   :name: Kiribati
   :international_dialing_prefix: '00'
-'998':
+-
   :country_code: '998'
   :national_dialing_prefix: '8'
   :char_2_code: '8'
   :iso_3166_code: UZ
   :name: Uzbekistan
   :international_dialing_prefix: '810'
-'65':
+-
   :country_code: '65'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: SG
   :name: Singapore
   :international_dialing_prefix: '000'
-'290':
+-
   :country_code: '290'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: SH
   :name: Saint Helena
   :international_dialing_prefix: '00'
-'262':
+-
   :country_code: '262'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: RE
   :name: RÃ©union
   :international_dialing_prefix: '00'
-'234':
+-
   :country_code: '234'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -884,21 +884,21 @@
   :local_number_format: \d{5,8}
   :mobile_format: (70|8[01])\d{8}
   :number_format: (70|8[01])\d{8}|([1-69]\d|7[1-9]|8[2-9])\d{6}
-'687':
+-
   :country_code: '687'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: NC
   :name: New Caledonia
   :international_dialing_prefix: '00'
-'856':
+-
   :country_code: '856'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: LA
   :name: Lao People's Democratic Republic
   :international_dialing_prefix: '00'
-'93':
+-
   :country_code: '93'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -909,14 +909,14 @@
   :local_number_format: \d{7,8}
   :mobile_format: 7\d{8}
   :number_format: \d{9}
-'376':
+-
   :country_code: '376'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: AD
   :name: Andorra
   :international_dialing_prefix: '00'
-'36':
+-
   :country_code: '36'
   :national_dialing_prefix: '6'
   :char_2_code: '6'
@@ -927,7 +927,7 @@
   :local_number_format: \d{6,7}
   :mobile_format: '[237]0\d{7}'
   :number_format: '[237]0\d{7}|[145689]\d{7}|[237][1-9]\d{6}'
-'263':
+-
   :country_code: '263'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -938,14 +938,14 @@
   :local_number_format: \d{3,8}
   :mobile_format: (7[137])\d{7}
   :number_format: \d{9}
-'688':
+-
   :country_code: '688'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: TV
   :name: Tuvalu
   :international_dialing_prefix: '00'
-'94':
+-
   :country_code: '94'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -956,91 +956,91 @@
   :local_number_format: \d{7,8}
   :mobile_format: 7\d{8}
   :number_format: \d{9}
-'377':
+-
   :country_code: '377'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: MC
   :name: Monaco
   :international_dialing_prefix: '00'
-'235':
+-
   :country_code: '235'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: TD
   :name: Chad
   :international_dialing_prefix: '00'
-'291':
+-
   :country_code: '291'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: ER
   :name: Eritrea
   :international_dialing_prefix: '00'
-'66':
+-
   :country_code: '66'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: TH
   :name: Thailand
   :international_dialing_prefix: '00'
-'886':
+-
   :country_code: '886'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: TW
   :name: Taiwan, Province Of China
   :international_dialing_prefix: '002'
-'378':
+-
   :country_code: '378'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: SM
   :name: San Marino
   :international_dialing_prefix: '00'
-'264':
+-
   :country_code: '264'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: NA
   :name: Namibia
   :international_dialing_prefix: '00'
-'95':
+-
   :country_code: '95'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: MM
   :name: Myanmar
   :international_dialing_prefix: '00'
-'236':
+-
   :country_code: '236'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: CF
   :name: Central African Republic
   :international_dialing_prefix: '00'
-'689':
+-
   :country_code: '689'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: PF
   :name: French Polynesia
   :international_dialing_prefix: '00'
-'970':
+-
   :country_code: '970'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: PS
   :name: Palestinian Territory, Occupied
   :international_dialing_prefix: '00'
-'237':
+-
   :country_code: '237'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: CM
   :name: Cameroon
   :international_dialing_prefix: '00'
-'39':
+-
   :country_code: '39'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -1051,14 +1051,14 @@
   :local_number_format: \d{4,9}
   :mobile_format: 3\d{8,10}
   :number_format: \d{6,11}
-'265':
+-
   :country_code: '265'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: MW
   :name: Malawi
   :international_dialing_prefix: '00'
-'971':
+-
   :country_code: '971'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1069,28 +1069,28 @@
   :local_number_format: \d{7}
   :mobile_format: (50|55|56)\d{7}
   :number_format: \d{8,9}
-'238':
+-
   :country_code: '238'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: CV
   :name: Cape Verde
   :international_dialing_prefix: '00'
-'266':
+-
   :country_code: '266'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: LS
   :name: Lesotho
   :international_dialing_prefix: '00'
-'239':
+-
   :country_code: '239'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: ST
   :name: Sao Tome and Principe
   :international_dialing_prefix: '00'
-'7':
+-
   :country_code: '7'
   :national_dialing_prefix: '8'
   :char_2_code: '8'
@@ -1101,7 +1101,7 @@
   :local_number_format: \d{5,9}
   :mobile_format: '[9|5]\d{9}'
   :number_format: \d{10}
-'98':
+-
   :country_code: '98'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1112,7 +1112,7 @@
   :local_number_format: \d{7,8}
   :mobile_format: 9\d{9}
   :number_format: \d{10}
-'972':
+-
   :country_code: '972'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1123,35 +1123,35 @@
   :local_number_format: \d{7}
   :mobile_format: 5\d{8}
   :number_format: \d{8,9}
-'350':
+-
   :country_code: '350'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: GI
   :name: Gibraltar
   :international_dialing_prefix: '00'
-'267':
+-
   :country_code: '267'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: BW
   :name: Botswana
   :international_dialing_prefix: '00'
-'690':
+-
   :country_code: '690'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: TK
   :name: Tokelau
   :international_dialing_prefix: '00'
-'268':
+-
   :country_code: '268'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: SZ
   :name: Swaziland
   :international_dialing_prefix: '00'
-'40':
+-
   :country_code: '40'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1162,7 +1162,7 @@
   :local_number_format: \d{6,8}
   :mobile_format: 7\d{8}
   :number_format: \d{9}
-'351':
+-
   :country_code: '351'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -1173,7 +1173,7 @@
   :local_number_format: \d{6,7}
   :mobile_format: 9\d{8}
   :number_format: \d{9}
-'973':
+-
   :country_code: '973'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -1184,7 +1184,7 @@
   :local_number_format: \d{7}
   :mobile_format: 3\d{7}
   :number_format: \d{8}
-'380':
+-
   :country_code: '380'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1195,14 +1195,14 @@
   :local_number_format: \d{7}
   :mobile_format: (39|50|6[3678]|9\d)\d{7}
   :number_format: \d{9}
-'41':
+-
   :country_code: '41'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: CH
   :name: Switzerland
   :international_dialing_prefix: '00'
-'974':
+-
   :country_code: '974'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -1213,21 +1213,21 @@
   :local_number_format: \d{6}
   :mobile_format: (33|55|66|77)\d{6}
   :number_format: \d{8}
-'691':
+-
   :country_code: '691'
   :national_dialing_prefix: '1'
   :char_2_code: '1'
   :iso_3166_code: FM
   :name: Micronesia, Federated States Of
   :international_dialing_prefix: '011'
-'297':
+-
   :country_code: '297'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: AW
   :name: Aruba
   :international_dialing_prefix: '00'
-'352':
+-
   :country_code: '352'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -1238,14 +1238,14 @@
   :local_number_format: \d{1,9}
   :mobile_format: 6\d1\d{6}
   :number_format: \d{5,11}
-'269':
+-
   :country_code: '269'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: YT
   :name: Mayotte
   :international_dialing_prefix: '00'
-'381':
+-
   :country_code: '381'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1256,7 +1256,7 @@
   :local_number_format: \d{7}
   :mobile_format: 6\d{7,8}
   :number_format: '[1-57-9]\d{6,8}|6\d{7,8}'
-'975':
+-
   :country_code: '975'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -1267,14 +1267,14 @@
   :local_number_format: \d{6}
   :mobile_format: 17\d{6}
   :number_format: 1\d{7}|[2-9]\d{6}
-'298':
+-
   :country_code: '298'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: FO
   :name: Faroe Islands
   :international_dialing_prefix: '00'
-'353':
+-
   :country_code: '353'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1285,56 +1285,56 @@
   :local_number_format: \d{4,8}
   :mobile_format: 8[2-9]\d{7}
   :number_format: ((8[2-9]|76)\d{7}|\d{7,9})
-'692':
+-
   :country_code: '692'
   :national_dialing_prefix: '1'
   :char_2_code: '1'
   :iso_3166_code: MH
   :name: Marshall Islands
   :international_dialing_prefix: '00'
-'212':
+-
   :country_code: '212'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: MA
   :name: Morocco
   :international_dialing_prefix: '00'
-'382':
+-
   :country_code: '382'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: ME
   :name: Montenegro
   :international_dialing_prefix: '00'
-'976':
+-
   :country_code: '976'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: MN
   :name: Mongolia
   :international_dialing_prefix: '001'
-'240':
+-
   :country_code: '240'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: GQ
   :name: Equatorial Guinea
   :international_dialing_prefix: '00'
-'299':
+-
   :country_code: '299'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: GL
   :name: Greenland
   :international_dialing_prefix: '00'
-'354':
+-
   :country_code: '354'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: IS
   :name: Iceland
   :international_dialing_prefix: '00'
-'43':
+-
   :country_code: '43'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1345,7 +1345,7 @@
   :local_number_format: \d{1,12}
   :mobile_format: 6\d{8}
   :number_format: \d{5,13}
-'977':
+-
   :country_code: '977'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1356,14 +1356,14 @@
   :local_number_format: \d{6,8}
   :mobile_format: 98\d{8}
   :number_format: \d{8}|98\d{8}
-'241':
+-
   :country_code: '241'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: GA
   :name: Gabon
   :international_dialing_prefix: '00'
-'355':
+-
   :country_code: '355'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1374,7 +1374,7 @@
   :local_number_format: \d{5,8}
   :mobile_format: 6\d{8}
   :number_format: 6\d{8}|[2-5789]\d{7}
-'213':
+-
   :country_code: '213'
   :national_dialing_prefix: '7'
   :char_2_code: '7'
@@ -1385,7 +1385,7 @@
   :local_number_format: \d{6,7}
   :mobile_format: (55|6[69]|7[79])\d{7}
   :number_format: (55|6[69]|7[79])\d{7}|\d{8}
-'44':
+-
   :country_code: '44'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1396,21 +1396,21 @@
   :local_number_format: \d{4,8}
   :mobile_format: 7\d{9}
   :number_format: \d{9,10}
-'242':
+-
   :country_code: '242'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: CG
   :name: Congo
   :international_dialing_prefix: '00'
-'356':
+-
   :country_code: '356'
   :national_dialing_prefix: '21'
   :char_2_code: '21'
   :iso_3166_code: MT
   :name: Malta
   :international_dialing_prefix: '00'
-'357':
+-
   :country_code: '357'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -1421,7 +1421,7 @@
   :local_number_format: \d{6}
   :mobile_format: 99\d{6}
   :number_format: \d{8}
-'45':
+-
   :country_code: '45'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -1432,7 +1432,7 @@
   :local_number_format: \d{6}
   :number_format: \d{8}
   :mobile_format: 40\d{6}
-'46':
+-
   :country_code: '46'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1443,7 +1443,7 @@
   :local_number_format: \d{5,8}
   :mobile_format: 7\d{8}
   :number_format: \d{7,10}
-'47':
+-
   :country_code: '47'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -1454,7 +1454,7 @@
   :local_number_format: \d{6,7}
   :mobile_format: '[49]\d{7}'
   :number_format: \d{8}
-'385':
+-
   :country_code: '385'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1465,21 +1465,21 @@
   :local_number_format: \d{6,7}
   :mobile_format: 9\d{8}
   :number_format: '[1-8]\d{7,8}|9\d{8}'
-'243':
+-
   :country_code: '243'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: CD
   :name: Congo, The Democratic Republic Of The
   :international_dialing_prefix: '00'
-'216':
+-
   :country_code: '216'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: TN
   :name: Tunisia
   :international_dialing_prefix: '00'
-'386':
+-
   :country_code: '386'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1490,7 +1490,7 @@
   :local_number_format: \d{6,7}
   :mobile_format: (3[01]|4[01]|51|6[456789]|7[01])\d{6}
   :number_format: \d{8}
-'358':
+-
   :country_code: '358'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1501,14 +1501,14 @@
   :local_number_format: \d{7,8}
   :mobile_format: 4\d{8}|50\d{7}
   :number_format: \d{9}
-'244':
+-
   :country_code: '244'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: AO
   :name: Angola
   :international_dialing_prefix: '00'
-'359':
+-
   :country_code: '359'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1519,7 +1519,7 @@
   :local_number_format: \d{6,7}
   :mobile_format: (8[789]|98)\d{7}|4[38]\d{6}
   :number_format: \d{8}|(8[789]|98)\d{7}
-'387':
+-
   :country_code: '387'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1530,28 +1530,28 @@
   :local_number_format: \d{6,7}
   :mobile_format: '[6]\d{7}'
   :number_format: \d{8}
-'245':
+-
   :country_code: '245'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: GW
   :name: Guinea-Bissau
   :international_dialing_prefix: '00'
-'48':
+-
   :country_code: '48'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: PL
   :name: Poland
   :international_dialing_prefix: '00'
-'218':
+-
   :country_code: '218'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: LY
   :name: Libyan Arab Jamahiriya
   :international_dialing_prefix: '00'
-'49':
+-
   :country_code: '49'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1562,28 +1562,28 @@
   :local_number_format: \d{7}
   :mobile_format: 1\d{9,10}
   :number_format: \d{5,11}
-'389':
+-
   :country_code: '389'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: MK
   :name: Macedonia, the Former Yugoslav Republic Of
   :international_dialing_prefix: '00'
-'670':
+-
   :country_code: '670'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: TL
   :name: Timor-Leste
   :international_dialing_prefix: '00'
-'248':
+-
   :country_code: '248'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: SC
   :name: Seychelles
   :international_dialing_prefix: '00'
-'20':
+-
   :country_code: '20'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1594,21 +1594,21 @@
   :local_number_format: \d{7,9}
   :mobile_format: 1\d{9}
   :number_format: \d{9,10}
-'500':
+-
   :country_code: '500'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: FK
   :name: Falkland Islands (Malvinas)
   :international_dialing_prefix: '00'
-'249':
+-
   :country_code: '249'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: SD
   :name: Sudan
   :international_dialing_prefix: '00'
-'501':
+-
   :country_code: '501'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
@@ -1619,14 +1619,14 @@
   :local_number_format: \d{6}
   :mobile_format: 6\d{6}
   :number_format: \d{7}
-'672':
+-
   :country_code: '672'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: NF
   :name: Norfolk Island
   :international_dialing_prefix: '00'
-'502':
+-
   :country_code: '502'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -1637,28 +1637,28 @@
   :local_number_format: \d{7}
   :mobile_format: '[45]\d{7}'
   :number_format: \d{8}
-'51':
+-
   :country_code: '51'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: PE
   :name: Peru
   :international_dialing_prefix: '00'
-'220':
+-
   :country_code: '220'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: GM
   :name: Gambia
   :international_dialing_prefix: '00'
-'673':
+-
   :country_code: '673'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: BN
   :name: Brunei Darussalam
   :international_dialing_prefix: '00'
-'503':
+-
   :country_code: '503'
   :national_dialing_prefix: None
   :char_2_code: None
@@ -1669,84 +1669,84 @@
   :local_number_format: \d{7}
   :mobile_format: 7\d{7}
   :number_format: \d{8}
-'221':
+-
   :country_code: '221'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: SN
   :name: Senegal
   :international_dialing_prefix: '00'
-'674':
+-
   :country_code: '674'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: NR
   :name: Nauru
   :international_dialing_prefix: '00'
-'52':
+-
   :country_code: '52'
   :national_dialing_prefix: '1'
   :char_2_code: '1'
   :iso_3166_code: MX
   :name: Mexico
   :international_dialing_prefix: '00'
-'504':
+-
   :country_code: '504'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: HN
   :name: Honduras
   :international_dialing_prefix: '00'
-'250':
+-
   :country_code: '250'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: RW
   :name: Rwanda
   :international_dialing_prefix: '00'
-'872':
+-
   :country_code: '872'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: PN
   :name: Pitcairn
   :international_dialing_prefix: '00'
-'675':
+-
   :country_code: '675'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: PG
   :name: Papua New Guinea
   :international_dialing_prefix: '00'
-'505':
+-
   :country_code: '505'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: NI
   :name: Nicaragua
   :international_dialing_prefix: '00'
-'222':
+-
   :country_code: '222'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: MR
   :name: Mauritania
   :international_dialing_prefix: '00'
-'53':
+-
   :country_code: '53'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: CU
   :name: Cuba
   :international_dialing_prefix: '119'
-'81':
+-
   :country_code: '81'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: JP
   :name: Japan
   :international_dialing_prefix: '010'
-'211':
+-
   :country_code: '211'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
