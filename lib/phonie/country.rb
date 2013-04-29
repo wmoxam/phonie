@@ -32,7 +32,9 @@ module Phonie
     def self.detect(string, default_country_code, default_area_code)
       # use the default_country_code to try for a quick match
       country = find_all_by_phone_code(default_country_code).find do |country|
-        country.matches_full_number?(string) || country.matches_local_number?(string, default_area_code)
+        country.matches_full_number?(string) ||
+          country.matches_local_number_with_area_code?(string) ||
+          country.matches_local_number?(string, default_area_code)
       end
 
       # then search all for a full match
@@ -48,13 +50,19 @@ module Phonie
       number =~ mobile_number_regex ? true : false
     end
 
-    def matches_local_number?(string, default_area_code)
-      (string =~ area_code_number_regex && string =~ number_format_regex) ||
-      (string =~ number_regex && default_area_code =~ area_code_regex)
-    end
-
+    # true if string contains country_code + area_code + local_number
     def matches_full_number?(string)
       string =~ full_number_regex && string =~ number_format_regex
+    end
+
+    # true if string contains area_code + local_number
+    def matches_local_number_with_area_code?(string)
+      string =~ area_code_number_regex && string =~ number_format_regex
+    end
+
+    # true if string contains only the local_number, but the default_area_code is valid
+    def matches_local_number?(string, default_area_code)
+      string =~ number_regex && default_area_code =~ area_code_regex
     end
 
     def number_parts(number, default_area_code)
