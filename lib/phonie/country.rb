@@ -51,12 +51,12 @@ module Phonie
     end
 
     def matches_local_number?(string, default_area_code)
-      (string =~ area_code_number_regexp && string =~ number_format_regex) ||
+      (string =~ area_code_number_regex && string =~ number_format_regex) ||
       (string =~ number_regex && default_area_code =~ area_code_regex)
     end
 
     def matches_full_number?(string)
-      string =~ full_number_regexp && string =~ number_format_regex
+      string =~ full_number_regex && string =~ number_format_regex
     end
 
     def number_parts(number, default_area_code)
@@ -68,13 +68,13 @@ module Phonie
       end
 
       if number_part.nil?
-        matches = number.match(area_code_number_regexp)
+        matches = number.match(area_code_number_regex)
         area_part = $1
         number_part = matches.to_a.last
       end
 
       if number_part.nil?
-        matches = number.match(full_number_regexp)
+        matches = number.match(full_number_regex)
         country_part, area_part = $1, $2
         number_part = matches.to_a.last
       end
@@ -93,11 +93,11 @@ module Phonie
       @number_format_regex ||= Regexp.new("^[+0]?(#{country_code})?(#{number_format})$")
     end
 
-    def full_number_regexp
+    def full_number_regex
       @full_number_regex ||= Regexp.new("^[+]?(#{country_code})(#{area_code})(#{local_number_format})$")
     end
 
-    def area_code_number_regexp
+    def area_code_number_regex
       @area_code_number_regex ||= Regexp.new("^0?(#{area_code})(#{local_number_format})$")
     end
 
