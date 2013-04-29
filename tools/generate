@@ -23,15 +23,15 @@ def already_exists?
 end
 
 def get_country_code
-  YAML.load(File.read(@data_file)).each_pair do |key, c|
+  YAML.load(File.read(@data_file)).each do |c|
     return c[:iso_3166_code].downcase if c[:name].downcase == @country.downcase
   end
   nil
 end
 
 def get_country_call_code
-  YAML.load(File.read(@data_file)).each_pair do |key, c|
-    return key if c[:name].downcase == @country.downcase
+  YAML.load(File.read(@data_file)).each do |c|
+    return c[:country_code] if c[:name].downcase == @country.downcase
   end
   nil
 end
@@ -48,24 +48,26 @@ class #{@country_code.upcase}Test < Phonie::TestCase
   def test_local
     parse_test('+#{country_call_code}',  '#{country_call_code}', '',  '', '#{@country}', false)
   end
-  
+
   def test_mobile
     parse_test('+#{country_call_code}', '#{country_call_code}', '', '', '#{@country}', true)
   end
-end 
+end
     eof
   end
    puts "Create: #{@test_filename}"
 end
 
 def add_missing_fields
-  hash = YAML.load(File.read(@data_file))
-  hash[get_country_call_code].merge!({:area_code => ' ', 
+  arr = YAML.load(File.read(@data_file))
+  arr.find{|c| c[:name].downcase == @country.downcase}.merge!(
+    :area_code => ' ',
     :local_number_format => ' ',
     :mobile_format => ' ',
-    :number_format => ' '})
+    :number_format => ' '
+  )
   File.open(@data_file, 'w') do |f|
-    f.puts hash.to_yaml
+    f.puts arr.to_yaml
   end
 
   puts "Modified: #{@data_file}"
