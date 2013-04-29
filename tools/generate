@@ -24,7 +24,7 @@ end
 
 def get_country_code
   YAML.load(File.read(@data_file)).each_pair do |key, c|
-    return c[:char_3_code].downcase if c[:name].downcase == @country.downcase
+    return c[:iso_3166_code].downcase if c[:name].downcase == @country.downcase
   end
   nil
 end
