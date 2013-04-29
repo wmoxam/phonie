@@ -3,31 +3,29 @@ module Phonie
     def self.load
       data_file = File.join(File.dirname(__FILE__), 'data', 'phone_countries.yml')
 
-      @all = []
+      all = []
       YAML.load(File.read(data_file)).each_pair do |key, c|
         next unless c[:area_code] && c[:local_number_format]
-        @all << Country.new(c[:name], c[:country_code], c[:char_2_code], c[:char_3_code], c[:area_code], c[:local_number_format], c[:mobile_format], c[:full_number_length], c[:number_format])
+        all << Country.new(c[:name], c[:country_code], c[:char_2_code], c[:char_3_code], c[:area_code], c[:local_number_format], c[:mobile_format], c[:full_number_length], c[:number_format])
       end
-      @all
+      all
     end
 
-    def self.all
-      @all
-    end
+    COUNTRIES = self.load
+    COUNTRIES_BY_PHONE_CODE   = COUNTRIES.inject(Hash.new){|h, c| (h[c.country_code] ||= []) << c; h }
+    COUNTRIES_BY_COUNTRY_CODE = Hash[*COUNTRIES.map{|c| [c.char_3_code.downcase, c] }.flatten]
+    COUNTRIES_BY_NAME         = Hash[*COUNTRIES.map{|c| [c.name.downcase, c] }.flatten]
 
     def self.find_all_by_phone_code(code)
-      return [] if code.nil?
-      all.select {|c| c.country_code == code }
+      COUNTRIES_BY_PHONE_CODE[code] || []
     end
 
     def self.find_by_country_code(code)
-      return if code.nil?
-      all.find {|c| c.char_3_code.downcase == code.downcase }
+      COUNTRIES_BY_COUNTRY_CODE[code.downcase] if code
     end
 
     def self.find_by_name(name)
-      return if name.nil?
-      all.find {|c| c.name.downcase == name.downcase }
+      COUNTRIES_BY_NAME[name.downcase] if name
     end
 
     # detect country from the string entered
@@ -38,7 +36,7 @@ module Phonie
       end
 
       # then search all for a full match
-      country || all.find {|country| country.matches_full_number?(string) }
+      country || COUNTRIES.find {|country| country.matches_full_number?(string) }
     end
 
     def to_s
