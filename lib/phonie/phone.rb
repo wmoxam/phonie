@@ -72,7 +72,10 @@ module Phonie
       extension = extract_extension(string)
       normalized = normalize(string)
 
-      return unless parts = split_to_parts(normalized, options)
+      return unless country = Country.detect(normalized, options[:country_code], options[:area_code])
+      parts = country.parse(normalized, options[:area_code])
+      parts[:country] = country
+      parts[:country_code] = country.country_code
       parts[:extension] = extension
       new(parts)
     end
