@@ -51,9 +51,9 @@ module Phonie
     end
 
     def matches_local_number?(string, default_area_code)
-      ((string =~ full_number_regexp ||
-       string =~ area_code_number_regexp) && string =~ number_format_regex) ||
-      ((string =~ number_regex) && (default_area_code =~ area_code_regex))
+      matches_full_number?(string) ||
+        (string =~ area_code_number_regexp && string =~ number_format_regex) ||
+        (string =~ number_regex && default_area_code =~ area_code_regex)
     end
 
     def matches_full_number?(string)
