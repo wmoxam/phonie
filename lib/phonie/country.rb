@@ -90,27 +90,27 @@ module Phonie
     private
 
     def number_format_regex
-      Regexp.new("^[+0]?(#{country_code})?(#{number_format})$")
+      @number_format_regex ||= Regexp.new("^[+0]?(#{country_code})?(#{number_format})$")
     end
 
     def full_number_regexp
-      Regexp.new("^[+]?(#{country_code})(#{area_code})(#{local_number_format})$")
+      @full_number_regex ||= Regexp.new("^[+]?(#{country_code})(#{area_code})(#{local_number_format})$")
     end
 
     def area_code_number_regexp
-      Regexp.new("^0?(#{area_code})(#{local_number_format})$")
+      @area_code_number_regex ||= Regexp.new("^0?(#{area_code})(#{local_number_format})$")
     end
 
     def area_code_regex
-      Regexp.new("^0?(#{area_code})$")
+      @area_code_regex ||= Regexp.new("^0?(#{area_code})$")
     end
 
     def mobile_number_regex
-      Regexp.new("^(#{mobile_format})$")
+      @mobile_number_regex ||= Regexp.new("^(#{mobile_format})$")
     end
 
     def number_regex
-      Regexp.new("^(#{local_number_format})$")
+      @number_regex ||= Regexp.new("^(#{local_number_format})$")
     end
   end
 end
