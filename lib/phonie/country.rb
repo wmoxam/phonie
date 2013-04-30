@@ -1,52 +1,48 @@
 module Phonie
-  class Country < Struct.new(:name, :country_code, :char_2_code, :char_3_code, :area_code, :local_number_format, :mobile_format, :full_number_length, :number_format)
-    cattr_accessor :all
-
+  class Country < Struct.new(:name, :country_code, :char_2_code, :iso_3166_code, :area_code, :local_number_format, :mobile_format, :full_number_length, :number_format)
     def self.load
-      return @@all if @@all.present?
-
       data_file = File.join(File.dirname(__FILE__), 'data', 'phone_countries.yml')
 
-      @@all = []
-      YAML.load(File.read(data_file)).each_pair do |key, c|
+      all = []
+      YAML.load(File.read(data_file)).each do |c|
         next unless c[:area_code] && c[:local_number_format]
-        @@all << Country.new(c[:name], c[:country_code], c[:char_2_code], c[:char_3_code], c[:area_code], c[:local_number_format], c[:mobile_format], c[:full_number_length], c[:number_format])
+        all << Country.new(c[:name], c[:country_code], c[:char_2_code], c[:iso_3166_code], c[:area_code], c[:local_number_format], c[:mobile_format], c[:full_number_length], c[:number_format])
       end
-      @@all
+      all
     end
 
-    def to_s
-      name
-    end
+    COUNTRIES = self.load
+    COUNTRIES_BY_PHONE_CODE   = COUNTRIES.inject(Hash.new){|h, c| (h[c.country_code] ||= []) << c; h }
+    COUNTRIES_BY_COUNTRY_CODE = Hash[*COUNTRIES.map{|c| [c.iso_3166_code.downcase, c] }.flatten]
+    COUNTRIES_BY_NAME         = Hash[*COUNTRIES.map{|c| [c.name.downcase, c] }.flatten]
 
     def self.find_all_by_phone_code(code)
-      return [] if code.nil?
-      @@all.select {|c| c.country_code == code }
+      COUNTRIES_BY_PHONE_CODE[code] || []
     end
 
     def self.find_by_country_code(code)
-      return nil if code.nil?
-      @@all.each {|c| return c if c.char_3_code.downcase == code.downcase }
-      nil
+      COUNTRIES_BY_COUNTRY_CODE[code.downcase] if code
     end
 
     def self.find_by_name(name)
-      return nil if name.nil?
-      @@all.each {|c| return c if c.name.downcase == name.downcase }
-      nil
+      COUNTRIES_BY_NAME[name.downcase] if name
     end
 
     # detect country from the string entered
     def self.detect(string, default_country_code, default_area_code)
-      Country.find_all_by_phone_code(default_country_code).each do |country|
-        return country if country.matches_local_number?(string, default_area_code)
+      # use the default_country_code to try for a quick match
+      country = find_all_by_phone_code(default_country_code).find do |country|
+        country.matches_full_number?(string) ||
+          country.matches_local_number_with_area_code?(string) ||
+          country.matches_local_number?(string, default_area_code)
       end
 
-      # find if the number has a country code
-      Country.all.each do |country|
-        return country if country.matches_full_number?(string)
-      end
-      return nil
+      # then search all for a full match
+      country || COUNTRIES.find {|country| country.matches_full_number?(string) }
+    end
+
+    def to_s
+      name
     end
 
     def is_mobile?(number)
@@ -54,67 +50,57 @@ module Phonie
       number =~ mobile_number_regex ? true : false
     end
 
-    def matches_local_number?(string, default_area_code)
-      ((string =~ full_number_regexp ||
-       string =~ area_code_number_regexp) && string =~ number_format_regex) ||
-      ((string =~ number_regex) && (default_area_code =~ area_code_regex))
-    end
-
+    # true if string contains country_code + area_code + local_number
     def matches_full_number?(string)
-      string =~ full_number_regexp && string =~ number_format_regex
+      string =~ full_number_regex && string =~ number_format_regex
     end
 
-    def number_parts(number, default_area_code)
-      number_part = if default_area_code
-        number.match(number_regex)
-        $1
+    # true if string contains area_code + local_number
+    def matches_local_number_with_area_code?(string)
+      string =~ area_code_number_regex && string =~ number_format_regex
+    end
+
+    # true if string contains only the local_number, but the default_area_code is valid
+    def matches_local_number?(string, default_area_code)
+      string =~ number_regex && default_area_code =~ area_code_regex
+    end
+
+    def parse(number, default_area_code)
+      if md = number.match(full_number_regex)
+        {:area_code => md[2], :number => md[-1]}
+      elsif md = number.match(area_code_number_regex)
+        {:area_code => md[1], :number => md[-1]}
+      elsif md = number.match(number_regex)
+        {:area_code => default_area_code, :number => md[1]}
       else
-        nil
+        {}
       end
-
-      if number_part.nil?
-        matches = number.match(area_code_number_regexp)
-        area_part = $1
-        number_part = matches.to_a.last
-      end
-
-      if number_part.nil?
-        matches = number.match(full_number_regexp)
-        country_part, area_part = $1, $2
-        number_part = matches.to_a.last
-      end
-
-      area_part ||= default_area_code
-
-      raise "Could not determine area code" if area_part.nil?
-      raise "Could not determine number" if number_part.nil?
-
-      {:number => number_part, :area_code => area_part, :country_code => country_code, :country => self}
     end
 
     private
+
     def number_format_regex
-      Regexp.new("^[+0]?(#{country_code})?(#{number_format})$")
+      @number_format_regex ||= Regexp.new("^[+0]?(#{country_code})?(#{number_format})$")
     end
 
-    def full_number_regexp
-      Regexp.new("^[+]?(#{country_code})(#{area_code})(#{local_number_format})$")
+    def full_number_regex
+      @full_number_regex ||= Regexp.new("^[+]?(#{country_code})(#{area_code})(#{local_number_format})$")
     end
 
-    def area_code_number_regexp
-      Regexp.new("^0?(#{area_code})(#{local_number_format})$")
+    def area_code_number_regex
+      @area_code_number_regex ||= Regexp.new("^0?(#{area_code})(#{local_number_format})$")
     end
 
     def area_code_regex
-      Regexp.new("^0?(#{area_code})$")
+      @area_code_regex ||= Regexp.new("^0?(#{area_code})$")
     end
 
     def mobile_number_regex
-      Regexp.new("^(#{mobile_format})$")
+      @mobile_number_regex ||= Regexp.new("^(#{mobile_format})$")
     end
 
     def number_regex
-      Regexp.new("^(#{local_number_format})$")
+      @number_regex ||= Regexp.new("^(#{local_number_format})$")
     end
   end
 end
