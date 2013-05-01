@@ -9,18 +9,18 @@ class PhoneTest < Phonie::TestCase
   def test_number_without_country_code_initialize
     Phonie::Phone.default_country_code = nil
 
-    assert_raise RuntimeError do
-      pn = Phonie::Phone.new '5125486', '91'
-    end
+    pn = Phonie::Phone.new '5125486', '91'
+    assert !pn.valid?
+    assert_equal ["can't be blank"], pn.errors[:country_code]
   end
 
-  def test_number_without_country_and_area_code_initialize
-    Phonie::Phone.default_country_code = nil
+  def test_number_without_area_code_initialize
+    Phonie::Phone.default_country_code = '1'
     Phonie::Phone.default_area_code = nil
 
-    assert_raise RuntimeError do
-      pn = Phonie::Phone.new '451588'
-    end
+    pn = Phonie::Phone.new '451588'
+    assert !pn.valid?
+    assert_equal ["can't be blank"], pn.errors[:area_code]
   end
 
   def test_number_with_default_area_code_initialize
@@ -52,8 +52,8 @@ class PhoneTest < Phonie::TestCase
   end
 
   def test_parse_empty
-    assert_equal Phonie::Phone.parse(''), nil
-    assert_equal Phonie::Phone.parse(nil), nil
+    assert_equal nil, Phonie::Phone.parse('')
+    assert_equal nil, Phonie::Phone.parse(nil)
   end
 
   def test_parse_short_without_special_characters_without_country
@@ -61,7 +61,7 @@ class PhoneTest < Phonie::TestCase
 
     assert_nil Phonie::Phone.parse "0915125486"
 
-    assert_raise RuntimeError do
+    assert_raise ArgumentError do
       Phonie::Phone.parse! "0915125486"
     end
   end
@@ -71,7 +71,7 @@ class PhoneTest < Phonie::TestCase
 
     assert_nil Phonie::Phone.parse "091/512-5486"
 
-    assert_raise RuntimeError do
+    assert_raise ArgumentError do
       Phonie::Phone.parse! "091/512-5486"
     end
   end
@@ -97,23 +97,23 @@ class PhoneTest < Phonie::TestCase
   def test_format_special_without_country_code
     Phonie::Phone.default_country_code = '385'
     pn = Phonie::Phone.new '5125486', '91'
-    assert_equal pn.format("%A/%f-%l"), '091/512-5486'
+    assert_equal '091/512-5486', pn.format("%A/%f-%l")
   end
 
   def test_format_with_symbol_specifier
     Phonie::Phone.default_country_code = nil
     pn = Phonie::Phone.new '5125486', '91', '385'
-    assert_equal pn.format(:europe), '+385 (0) 91 512 5486'
+    assert_equal '+385 (0) 91 512 5486', pn.format(:europe)
   end
 
   def test_valid
-    assert_equal Phonie::Phone.valid?('915125486', :country_code => '385'), true
-    assert_equal Phonie::Phone.valid?('385915125486'), true
+    assert Phonie::Phone.valid?('915125486', :country_code => '385')
+    assert Phonie::Phone.valid?('385915125486')
   end
 
   def test_doesnt_validate
-    assert_equal Phonie::Phone.valid?('asdas'), false
-    assert_equal Phonie::Phone.valid?('38591512548678'), false
+    assert !Phonie::Phone.valid?('asdas')
+    assert !Phonie::Phone.valid?('38591512548678')
   end
 
   def test_comparison_true
@@ -129,9 +129,9 @@ class PhoneTest < Phonie::TestCase
   end
 
   def test_parse_number_without_international_code
-    assert_equal (Phonie::Phone.parse "90123456"), nil
-    assert_equal (Phonie::Phone.parse "90123456", :country_code => '47').format(:default), "+4790123456"
-    assert_equal (Phonie::Phone.parse "90123456", :country_code => '47', :area_code => '').format(:default), "+4790123456"
+    assert_equal nil, Phonie::Phone.parse("90123456")
+    assert_equal "+4790123456", Phonie::Phone.parse("90123456", :country_code => '47').format(:default)
+    assert_equal "+4790123456", Phonie::Phone.parse("90123456", :country_code => '47', :area_code => '').format(:default)
   end
 
 end
