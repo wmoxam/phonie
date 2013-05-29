@@ -1753,3 +1753,13 @@
   :iso_3166_code: SS
   :name: South Sudan
   :international_dialing_prefix: '00'
+-
+  :country_code: '1'
+  :national_dialing_prefix: '1'
+  :char_2_code: '1'
+  :iso_3166_code: PR
+  :name: Puerto Rico
+  :international_dialing_prefix: '1'
+  :area_code: 787|939
+  :local_number_format: \d{7}
+  :number_format: \d{10}
