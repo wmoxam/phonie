@@ -1,6 +1,4 @@
-require 'active_model/naming'
-require 'active_model/translation'
-require 'active_model/validations'
+require 'active_model'
 
 # An object representing a phone number.
 #
