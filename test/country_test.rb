@@ -24,4 +24,9 @@ class CountryTest < Phonie::TestCase
     assert_equal "Norway", countries.first.name
   end
 
+  def test_extra
+    country = Phonie::Country.find_by_name('Canada')
+    assert_equal 'Canada', country.extra[:name]
+    assert_equal '011', country.extra[:international_dialing_prefix]
+  end
 end
