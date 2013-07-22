@@ -24,4 +24,11 @@ class CountryTest < Phonie::TestCase
     assert_equal "Norway", countries.first.name
   end
 
+  def test_national_dialing_prefix
+    tonga = Phonie::Country.find_by_country_code('TO')
+    assert_nil tonga.national_dialing_prefix
+
+    us_and_a = Phonie::Country.find_by_country_code('US')
+    assert_equal '1', us_and_a.national_dialing_prefix
+  end
 end
