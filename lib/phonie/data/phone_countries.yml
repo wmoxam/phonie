@@ -1206,6 +1206,8 @@
   :iso_3166_code: CH
   :name: Switzerland
   :international_dialing_prefix: '00'
+  :area_code: \d{2,3}
+  :number_format: \d{6,7}
 -
   :country_code: '974'
   :national_dialing_prefix: None
