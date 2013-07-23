@@ -1409,11 +1409,15 @@
   :international_dialing_prefix: '00'
 -
   :country_code: '356'
-  :national_dialing_prefix: '21'
-  :char_2_code: '21'
+  :national_dialing_prefix: None
+  :char_2_code: None
   :iso_3166_code: MT
   :name: Malta
   :international_dialing_prefix: '00'
+  :area_code: '2\d|[79]\d{1}'
+  :number_format: \d{8}
+  :local_number_format: \d{6}
+  :mobile_format: '[78]\d{7}'
 -
   :country_code: '357'
   :national_dialing_prefix: None
