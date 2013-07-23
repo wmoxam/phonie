@@ -1,12 +1,12 @@
 module Phonie
-  class Country < Struct.new(:name, :country_code, :char_2_code, :iso_3166_code, :area_code, :local_number_format, :mobile_format, :full_number_length, :number_format)
+  class Country < Struct.new(:name, :country_code, :char_2_code, :iso_3166_code, :area_code, :local_number_format, :mobile_format, :full_number_length, :number_format, :national_dialing_prefix)
     def self.load
       data_file = File.join(File.dirname(__FILE__), 'data', 'phone_countries.yml')
 
       all = []
       YAML.load(File.read(data_file)).each do |c|
         next unless c[:area_code] && c[:local_number_format]
-        all << Country.new(c[:name], c[:country_code], c[:char_2_code], c[:iso_3166_code], c[:area_code], c[:local_number_format], c[:mobile_format], c[:full_number_length], c[:number_format])
+        all << Country.new(c[:name], c[:country_code], c[:char_2_code], c[:iso_3166_code], c[:area_code], c[:local_number_format], c[:mobile_format], c[:full_number_length], c[:number_format], c[:national_dialing_prefix])
       end
       all
     end
@@ -74,6 +74,15 @@ module Phonie
         {:area_code => default_area_code, :number => md[1]}
       else
         {}
+      end
+    end
+
+    def national_dialing_prefix
+      prefix = super
+      if prefix == "None"
+        nil
+      else
+        prefix
       end
     end
 
