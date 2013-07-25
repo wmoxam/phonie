@@ -100,6 +100,7 @@ Currently tested on:
 [BY] Belarus
 [BZ] Belize
 [CA] Canada
+[CH] Switzerland
 [CN] China
 [CR] Costa Rica
 [CY] Cyprus
@@ -133,6 +134,7 @@ Currently tested on:
 [LT] Lithuania
 [LU] Luxembourg
 [LV] Latvia
+[MX] Mexico
 [NG] Nigeria
 [NL] Netherlands
 [NO] Norway

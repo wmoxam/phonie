@@ -7,5 +7,8 @@ class CHTest < Phonie::TestCase
     parse_test('+41213459020', '41', '21', '3459020', 'Switzerland', false)
   end
 
+  def test_mobile
+    parse_test('+41743459020', '41', '74', '3459020', 'Switzerland', true)
+  end
 end
 

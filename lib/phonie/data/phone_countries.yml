@@ -1206,7 +1206,7 @@
   :iso_3166_code: CH
   :name: Switzerland
   :international_dialing_prefix: '00'
-  :area_code: 21|22|24|26|27|31|32|33|34|41|43|44|51|52|55|56|58|61|62|71|81|91
+  :area_code: 21|22|24|26|27|31|32|33|34|41|43|44|51|52|55|56|58|61|62|71|74|76|77|78|79|81|91
   :mobile_format: (74|76|77|78|79)\d{7}
   :local_number_format: \d{7}
   :number_format: \d{9}
@@ -1656,6 +1656,17 @@
   :iso_3166_code: PE
   :name: Peru
   :international_dialing_prefix: '00'
+-
+  :country_code: '52'
+  :national_dialing_prefix: '1'
+  :char_2_code: '1'
+  :iso_3166_code: MX
+  :name: Mexico
+  :international_dialing_prefix: '00'
+  :area_code: '1?(55|81|33|656|614|999|222|442|664|661|646|686|667|722|998|871|744|444|833|961|962|687)'
+  :local_number_format: '\d{7,8}'
+  :mobile_format: '1(55|81|33|656|614|999|222|442|664|661|646|686|667|722|998|871|744|444|833|961|962|687)\d{7,8}'
+  :number_format: '\d{10,11}'
 -
   :country_code: '220'
   :national_dialing_prefix: None
