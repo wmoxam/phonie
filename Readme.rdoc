@@ -129,6 +129,7 @@ Currently tested on:
 [IN] India
 [IR] Iran
 [IT] Italy
+[JP] Japan
 [KE] Kenya
 [LK] Sri Lanka
 [LT] Lithuania
