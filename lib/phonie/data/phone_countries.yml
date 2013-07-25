@@ -1653,6 +1653,17 @@
   :name: Peru
   :international_dialing_prefix: '00'
 -
+  :country_code: '52'
+  :national_dialing_prefix: '1'
+  :char_2_code: '1'
+  :iso_3166_code: MX
+  :name: Mexico
+  :international_dialing_prefix: '00'
+  :area_code: '1?(55|81|33|656|614|999|222|442|664|661|646|686|667|722|998|871|744|444|833|961|962|687)'
+  :local_number_format: '\d{7,8}'
+  :mobile_format: '1(55|81|33|656|614|999|222|442|664|661|646|686|667|722|998|871|744|444|833|961|962|687)\d{7,8}'
+  :number_format: '\d{10,11}'
+-
   :country_code: '220'
   :national_dialing_prefix: None
   :char_2_code: None

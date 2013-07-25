@@ -134,6 +134,7 @@ Currently tested on:
 [LT] Lithuania
 [LU] Luxembourg
 [LV] Latvia
+[MX] Mexico
 [NG] Nigeria
 [NL] Netherlands
 [NO] Norway
