@@ -10,6 +10,3 @@ class TRTest < Phonie::TestCase
     parse_test('+905333364565', '90', '533', '3364565', 'Turkey', true)
   end
 end
-
-
-
