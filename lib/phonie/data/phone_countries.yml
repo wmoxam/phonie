@@ -624,6 +624,10 @@
   :iso_3166_code: TR
   :name: Turkey
   :international_dialing_prefix: '00'
+  :number_format: '\d{10}'
+  :area_code: '\d{3}'
+  :local_number_format: '\d{7}'
+  :mobile_format: '(530|531|532|533|534|535|536|537|538|539|540|541|542|543|544|545|546|547|548|549|500|501|502|503|504|505|506|507|508|509|550|551|552|553|554|555|556|557|558|559)\d{7}'
 -
   :country_code: '373'
   :national_dialing_prefix: '0'
