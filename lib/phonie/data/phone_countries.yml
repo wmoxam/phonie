@@ -1266,12 +1266,22 @@
   :mobile_format: 6\d1\d{6}
   :number_format: \d{5,11}
 -
-  :country_code: '269'
+  :country_code: '262'
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: YT
   :name: Mayotte
   :international_dialing_prefix: '00'
+-
+  :country_code: '269'
+  :national_dialing_prefix: None
+  :char_2_code: None
+  :iso_3166_code: KM
+  :name: Comoros
+  :international_dialing_prefix: '00'
+  :area_code: '767|7{3}|77[45]|(?:76|77)[0-389]'
+  :local_number_format: '\d{4}'
+  :number_format: '\d{7}'
 -
   :country_code: '381'
   :national_dialing_prefix: '0'
