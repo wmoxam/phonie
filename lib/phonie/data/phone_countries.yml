@@ -1506,6 +1506,10 @@
   :iso_3166_code: TN
   :name: Tunisia
   :international_dialing_prefix: '00'
+  :area_code: '\d{2}'
+  :local_number_format: '\d{6}'
+  :mobile_format: '(2|4|5|9)\d{7}'
+  :number_format: '\d{8}'
 -
   :country_code: '386'
   :national_dialing_prefix: '0'
