@@ -270,6 +270,10 @@
   :iso_3166_code: BF
   :name: Burkina Faso
   :international_dialing_prefix: '00'
+  :area_code: '\d{2}'
+  :local_number_format: '\d{6}'
+  :number_format: '\d{8}'
+  :mobile_format: '7\d{7}'
 -
   :country_code: '423'
   :national_dialing_prefix: None
@@ -298,6 +302,10 @@
   :iso_3166_code: GF
   :name: French Guiana
   :international_dialing_prefix: '00'
+  :area_code: '594|694'
+  :mobile_format: '694\d{6}'
+  :local_number_format: '\d{6}'
+  :number_format: '[5|6]94\d{6}'
 -
   :country_code: '86'
   :national_dialing_prefix: '0'
@@ -1825,6 +1833,10 @@
   :iso_3166_code: NI
   :name: Nicaragua
   :international_dialing_prefix: '00'
+  :area_code: \d
+  :mobile_format: 8\d{7}
+  :number_format: '\d{8}'
+  :local_number_format: \d{7}
 -
   :country_code: '222'
   :national_dialing_prefix: '0'
