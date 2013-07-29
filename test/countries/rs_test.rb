@@ -11,5 +11,6 @@ class RSTest < Phonie::TestCase
   def test_mobile
     # mts
     parse_test('+381 648542987', '381', '64', '8542987', "Serbia", true)
+    parse_test('+381 63399599', '381', '63', '399599', "Serbia", true)
   end
 end
