@@ -1833,6 +1833,10 @@
   :iso_3166_code: NI
   :name: Nicaragua
   :international_dialing_prefix: '00'
+  :area_code: \d
+  :mobile_format: 8\d{7}
+  :number_format: '\d{8}'
+  :local_number_format: \d{7}
 -
   :country_code: '222'
   :national_dialing_prefix: '0'
