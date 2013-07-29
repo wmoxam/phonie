@@ -127,10 +127,13 @@ Currently tested on:
 [IE] Ireland
 [IL] Israel
 [IN] India
+[IQ] Iraq
 [IR] Iran
 [IT] Italy
 [JP] Japan
 [KE] Kenya
+[KR] South Korea
+[KW] Kuwait
 [LK] Sri Lanka
 [LT] Lithuania
 [LU] Luxembourg
@@ -151,11 +154,15 @@ Currently tested on:
 [SA] Saudi Arabia
 [SE] Sweden
 [SI] Slovenia
+[SK] Slovakia
+[SN] Senegal
 [SV] El Salvador
 [TO] Tonga
+[TW] Taiwan
 [UA] Ukraine
 [US] United States
 [UY] Uruguay
+[VN] Vietnam
 [ZA] South Africa
 [ZW] Zimbabwe
 
