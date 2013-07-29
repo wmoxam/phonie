@@ -270,6 +270,10 @@
   :iso_3166_code: BF
   :name: Burkina Faso
   :international_dialing_prefix: '00'
+  :area_code: '\d{2}'
+  :local_number_format: '\d{6}'
+  :number_format: '\d{8}'
+  :mobile_format: '7\d{7}'
 -
   :country_code: '423'
   :national_dialing_prefix: None
@@ -298,6 +302,10 @@
   :iso_3166_code: GF
   :name: French Guiana
   :international_dialing_prefix: '00'
+  :area_code: '594|694'
+  :mobile_format: '694\d{6}'
+  :local_number_format: '\d{6}'
+  :number_format: '[5|6]94\d{6}'
 -
   :country_code: '86'
   :national_dialing_prefix: '0'
@@ -1368,6 +1376,10 @@
   :iso_3166_code: MA
   :name: Morocco
   :international_dialing_prefix: '00'
+  :number_format: '\d{9}'
+  :area_code: '53890|53880|52990|52980|5373|5224|5225|5226|5227|5228|5229|5232|5233|5234|5235|5237|5242|5243|5244|5246|5247|5248|5282|5283|5285|5286|5287|5288|5289|5290|5222|8920|5352|5353|5354|5355|5356|5357|5358|5359|5362|5363|5365|5366|5367|5368|5372|5223|5374|5375|5376|5377|5378|5379|5380|8921|8922|5394|5399|5398|5397|5396|5395|5393|644|610|611|612|613|614|615|616|617|618|619|636|637|640|641|642|521|645|646|647|649|648|650|651|652|653|534|533|532|531|530|654|655|656|657|658|659|660|661|662|663|527|526|525|664|665|666|667|668|669|670|671|672|673|674|675|676|677|678|679|520|80|89'
+  :local_number_format: '\d{4,7}'
+  :mobile_format: '6\d{8}'
 -
   :country_code: '382'
   :national_dialing_prefix: '0'
@@ -1825,6 +1837,10 @@
   :iso_3166_code: NI
   :name: Nicaragua
   :international_dialing_prefix: '00'
+  :area_code: \d
+  :mobile_format: 8\d{7}
+  :number_format: '\d{8}'
+  :local_number_format: \d{7}
 -
   :country_code: '222'
   :national_dialing_prefix: '0'
