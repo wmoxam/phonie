@@ -1379,6 +1379,10 @@
   :iso_3166_code: IS
   :name: Iceland
   :international_dialing_prefix: '00'
+  :number_format: '\d{7}'
+  :local_number_format: '\d{4}'
+  :area_code: '\d{3}'
+  :mobile_format: '[6-8]\d{6}'
 -
   :country_code: '43'
   :national_dialing_prefix: '0'
