@@ -302,6 +302,10 @@
   :iso_3166_code: GF
   :name: French Guiana
   :international_dialing_prefix: '00'
+  :area_code: '594|694'
+  :mobile_format: '694\d{4}'
+  :local_number_format: '\d{4}'
+  :number_format: '[5|6]94\d{4}'
 -
   :country_code: '86'
   :national_dialing_prefix: '0'
