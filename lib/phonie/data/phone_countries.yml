@@ -111,6 +111,10 @@
   :iso_3166_code: SK
   :name: Slovakia
   :international_dialing_prefix: '00'
+  :area_code: '9|2|3[1-8]|4[1-8]|5[1-8]'
+  :local_number_format: '\d{8}'
+  :number_format: '\d{9,10}'
+  :mobile_format: '9\d{8}'
 -
   :country_code: '507'
   :national_dialing_prefix: None
