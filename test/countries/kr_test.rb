@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 
-## Korea, Republic of 
+## Korea, Republic of
 class KRTest < Phonie::TestCase
   def test_local
     parse_test('+8223123456',  '82', '2',  '3123456', 'Korea, Republic of', false)
@@ -12,5 +12,7 @@ class KRTest < Phonie::TestCase
   def test_mobile
     parse_test('+82103123456', '82', '10', '3123456', 'Korea, Republic of', true)
     parse_test('+82193123456', '82', '19', '3123456', 'Korea, Republic of', true)
+    parse_test('+821085421653', '82', '10', '85421653', 'Korea, Republic of', true)
+    parse_test('+821195188293', '82', '11', '95188293', 'Korea, Republic of', true)
   end
-end 
+end
