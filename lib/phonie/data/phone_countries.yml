@@ -1314,7 +1314,7 @@
   :name: Serbia
   :international_dialing_prefix: '00'
   :area_code: '[1-9]\d'
-  :local_number_format: \d{7}
+  :local_number_format: \d{6,7}
   :mobile_format: 6\d{7,8}
   :number_format: '[1-57-9]\d{6,8}|6\d{7,8}'
 -
