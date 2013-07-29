@@ -9,6 +9,7 @@ class HRTest < Phonie::TestCase
 
   def test_mobile
     parse_test('+385915125486', '385', '91', '5125486', 'Croatia', true)
+    parse_test('+38598800916', '385', '98', '800916', 'Croatia', true)
   end
 
   def test_long_without_special_characters
