@@ -791,6 +791,10 @@
   :iso_3166_code: KH
   :name: Cambodia
   :international_dialing_prefix: '00'
+  :local_number_format: '\d{6,7}'
+  :area_code: '\d{2}'
+  :mobile_format: '(11|77|88|99|[17-9]0|[19]2|[189]3|[18]5|[17]6|[169]7|[1679]8|[6-8]9|8[14])\d{6,7}'
+  :number_format: '\d{8,9}'
 -
   :country_code: '261'
   :national_dialing_prefix: None
