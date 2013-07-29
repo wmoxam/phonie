@@ -69,9 +69,9 @@
   :name: Korea, Republic of
   :international_dialing_prefix: '001'
   :area_code: 1[0-9]|2|3[0-3]|4[1-49]|5[0-5]|6[0-4]|70|8[0-8]
-  :local_number_format: \d{7}
-  :mobile_format: 1\d{8}
-  :number_format: 2\d{7}|\d{9}
+  :local_number_format: \d{7,8}
+  :mobile_format: 1\d{8,9}
+  :number_format: 2\d{7}|\d{9,10}
 -
   :country_code: '223'
   :national_dialing_prefix: '0'
@@ -111,6 +111,10 @@
   :iso_3166_code: SK
   :name: Slovakia
   :international_dialing_prefix: '00'
+  :area_code: '9|2|3[1-8]|4[1-8]|5[1-8]'
+  :local_number_format: '\d{8}'
+  :number_format: '\d{9,10}'
+  :mobile_format: '9\d{8}'
 -
   :country_code: '507'
   :national_dialing_prefix: None
@@ -143,6 +147,10 @@
   :iso_3166_code: VN
   :name: Viet Nam
   :international_dialing_prefix: '00'
+  :area_code: '199|188|186|169|168|167|166|165|164|163|129|128|127|126|125|996|123|122|121|120|999|998|124|710|281|280|711|780|781|241|240|231|230|650|219|218|211|210|321|320|350|351|511|510|501|500|651|98|31|30|70|59|58|57|56|55|54|53|52|36|37|38|90|91|92|93|94|95|96|97|20|39|68|67|66|29|22|64|63|62|61|60|79|25|26|77|76|75|74|73|72|27|33|4'
+  :mobile_format: '(199|188|186|169|168|167|166|165|164|163|129|128|127|126|125|996|123|122|121|120|999|998|124|98|97|96|95|94|93|92|91|90)\d{7}'
+  :local_number_format: '\d{5,8}'
+  :number_format: '\d{6,11}'
 -
   :country_code: '678'
   :national_dialing_prefix: None
@@ -469,6 +477,10 @@
   :char_2_code: None
   :iso_3166_code: IQ
   :name: Iraq
+  :area_code: '1|\d{2}'
+  :local_number_format: '\d{6,8}'
+  :mobile_format: '7\d{9}'
+  :number_format: '\d{8,10}'
   :international_dialing_prefix: '00'
 -
   :country_code: '370'
@@ -512,6 +524,10 @@
   :char_2_code: None
   :iso_3166_code: KW
   :name: Kuwait
+  :area_code: '2|5|6|9'
+  :mobile_format: '(5|6|9)\d{7}'
+  :local_number_format: '\d{7}'
+  :number_format: '[2|5|6|9]\d{7}'
   :international_dialing_prefix: '00'
 -
   :country_code: '371'
@@ -1026,6 +1042,10 @@
   :iso_3166_code: TW
   :name: Taiwan, Province Of China
   :international_dialing_prefix: '002'
+  :mobile_format: '9\d{8}'
+  :area_code: '826|836|89|82|37|49|9|6|5|7|4|8|3|2'
+  :number_format: '\d{8,9}'
+  :local_number_format: '\d{5,8}'
 -
   :country_code: '378'
   :national_dialing_prefix: None
@@ -1302,7 +1322,7 @@
   :name: Serbia
   :international_dialing_prefix: '00'
   :area_code: '[1-9]\d'
-  :local_number_format: \d{7}
+  :local_number_format: \d{6,7}
   :mobile_format: 6\d{7,8}
   :number_format: '[1-57-9]\d{6,8}|6\d{7,8}'
 -
@@ -1520,8 +1540,8 @@
   :international_dialing_prefix: '00'
   :area_code: 1|[2-9]\d
   :local_number_format: \d{6,7}
-  :mobile_format: 9\d{8}
-  :number_format: '[1-8]\d{7,8}|9\d{8}'
+  :mobile_format: 9\d{7,8}
+  :number_format: '[1-8]\d{7,8}|9\d{7,8}'
 -
   :country_code: '243'
   :national_dialing_prefix: None
@@ -1751,6 +1771,10 @@
   :char_2_code: None
   :iso_3166_code: SN
   :name: Senegal
+  :area_code: '7|8|9'
+  :local_number_format: '\d{7}'
+  :mobile_format: '8\d{7}|9d\{7}'
+  :number_format: '\d{8}'
   :international_dialing_prefix: '00'
 -
   :country_code: '674'
