@@ -1030,6 +1030,10 @@
   :iso_3166_code: TW
   :name: Taiwan, Province Of China
   :international_dialing_prefix: '002'
+  :mobile_format: '9\d{8}'
+  :area_code: '826|836|89|82|37|49|9|6|5|7|4|8|3|2'
+  :number_format: '\d{8,9}'
+  :local_number_format: '\d{5,8}'
 -
   :country_code: '378'
   :national_dialing_prefix: None
