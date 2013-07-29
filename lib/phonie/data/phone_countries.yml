@@ -477,6 +477,10 @@
   :char_2_code: None
   :iso_3166_code: IQ
   :name: Iraq
+  :area_code: '1|\d{2}'
+  :local_number_format: '\d{6,8}'
+  :mobile_format: '7\d{9}'
+  :number_format: '\d{8,10}'
   :international_dialing_prefix: '00'
 -
   :country_code: '370'
