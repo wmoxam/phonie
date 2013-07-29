@@ -229,6 +229,10 @@
   :iso_3166_code: HT
   :name: Haiti
   :international_dialing_prefix: '00'
+  :area_code: \d{2}
+  :number_format: \d{8}
+  :local_number_format: \d{6}
+  :mobile_format: '((3[2-9]|4\d)\d{6})'
 -
   :country_code: '593'
   :national_dialing_prefix: '0'
