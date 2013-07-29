@@ -1532,8 +1532,8 @@
   :international_dialing_prefix: '00'
   :area_code: 1|[2-9]\d
   :local_number_format: \d{6,7}
-  :mobile_format: 9\d{8}
-  :number_format: '[1-8]\d{7,8}|9\d{8}'
+  :mobile_format: 9\d{7,8}
+  :number_format: '[1-8]\d{7,8}|9\d{7,8}'
 -
   :country_code: '243'
   :national_dialing_prefix: None
