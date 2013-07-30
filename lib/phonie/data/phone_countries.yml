@@ -1783,10 +1783,10 @@
   :char_2_code: None
   :iso_3166_code: SN
   :name: Senegal
-  :area_code: '7|8|9'
-  :local_number_format: '\d{7}'
-  :mobile_format: '8\d{7}|9d\{7}'
-  :number_format: '\d{8}'
+  :area_code: '7|33'
+  :local_number_format: '\d{7,8}'
+  :mobile_format: '7\d{8}'
+  :number_format: '\d{9}'
   :international_dialing_prefix: '00'
 -
   :country_code: '674'
