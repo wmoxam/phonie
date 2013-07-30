@@ -91,6 +91,7 @@ Currently tested on:
 [BA] Bosnia and Herzegovina
 [BD] Bangladesh
 [BE] Belgium
+[BF] Burkina Faso
 [BG] Bulgaria
 [BH] Bahrain
 [BO] Bolivia
@@ -117,6 +118,7 @@ Currently tested on:
 [FR] France
 [GB] United Kingdom
 [GE] Georgia
+[GF] French Guiana
 [GH] Ghana
 [GR] Greece
 [GT] Guatemala
@@ -138,9 +140,11 @@ Currently tested on:
 [LT] Lithuania
 [LU] Luxembourg
 [LV] Latvia
+[MA] Morocco
 [MT] Malta
 [MX] Mexico
 [NG] Nigeria
+[NI] Nicaragua
 [NL] Netherlands
 [NO] Norway
 [NP] Nepal
