@@ -91,6 +91,7 @@ Currently tested on:
 [BA] Bosnia and Herzegovina
 [BD] Bangladesh
 [BE] Belgium
+[BF] Burkina Faso
 [BG] Bulgaria
 [BH] Bahrain
 [BO] Bolivia
@@ -117,6 +118,7 @@ Currently tested on:
 [FR] France
 [GB] United Kingdom
 [GE] Georgia
+[GF] French Guiana
 [GH] Ghana
 [GR] Greece
 [GT] Guatemala
@@ -127,17 +129,22 @@ Currently tested on:
 [IE] Ireland
 [IL] Israel
 [IN] India
+[IQ] Iraq
 [IR] Iran
 [IT] Italy
 [JP] Japan
 [KE] Kenya
+[KR] South Korea
+[KW] Kuwait
 [LK] Sri Lanka
 [LT] Lithuania
 [LU] Luxembourg
 [LV] Latvia
+[MA] Morocco
 [MT] Malta
 [MX] Mexico
 [NG] Nigeria
+[NI] Nicaragua
 [NL] Netherlands
 [NO] Norway
 [NP] Nepal
@@ -151,11 +158,15 @@ Currently tested on:
 [SA] Saudi Arabia
 [SE] Sweden
 [SI] Slovenia
+[SK] Slovakia
+[SN] Senegal
 [SV] El Salvador
 [TO] Tonga
+[TW] Taiwan
 [UA] Ukraine
 [US] United States
 [UY] Uruguay
+[VN] Vietnam
 [ZA] South Africa
 [ZW] Zimbabwe
 
