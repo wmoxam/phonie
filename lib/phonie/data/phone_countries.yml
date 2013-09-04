@@ -248,10 +248,10 @@
   :iso_3166_code: EC
   :name: Ecuador
   :international_dialing_prefix: '00'
-  :area_code: \d
-  :local_number_format: \d{7}
-  :mobile_format: '[89]\d{7}'
-  :number_format: \d{8}
+  :area_code: '[2-7]|9'
+  :local_number_format: \d{7,8}
+  :mobile_format: '9\d{8}'
+  :number_format: '\d{8,9}'
 -
   :country_code: '254'
   :national_dialing_prefix: '0'

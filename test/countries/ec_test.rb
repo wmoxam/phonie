@@ -7,6 +7,6 @@ class ECTest < Phonie::TestCase
   end
 
   def test_mobile
-    parse_test('+59391234567', '593', '9', '1234567', 'Ecuador', true)
+    parse_test('+593998801003', '593', '9', '98801003', 'Ecuador', true)
   end
 end
