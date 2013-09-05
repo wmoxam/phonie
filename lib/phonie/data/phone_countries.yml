@@ -485,11 +485,15 @@
   :number_format: '[4]\d{8}|[1-9]\d{7}'
 -
   :country_code: '965'
-  :national_dialing_prefix: None
+  :national_dialing_prefix: '0'
   :char_2_code: None
   :iso_3166_code: KW
   :name: Kuwait
   :international_dialing_prefix: '00'
+  :area_code: ''
+  :local_number_format: \d{8}
+  :number_format: \d{8}
+  :mobile_format: ''
 -
   :country_code: '371'
   :national_dialing_prefix: '8'

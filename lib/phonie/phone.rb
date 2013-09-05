@@ -37,7 +37,7 @@ module Phonie
 
     include ActiveModel::Validations
     validates :country_code, :presence => true
-    validates :area_code, :presence => true
+    validates :area_code, :presence => {:unless => lambda { |p| p.area_code == "" } }
     validates :number, :presence => true
 
     def initialize(*hash_or_args)
