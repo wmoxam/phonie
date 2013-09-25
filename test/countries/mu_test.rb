@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 ## Mauritius
 class MUTest < Phonie::TestCase
   def test_local
-    parse_test('+23054037000',  '230', '5403',  '7000', 'Mauritius', false)
+    parse_test('+2304037000',  '230', '403',  '7000', 'Mauritius', false)
   end
 
   def test_mobile
