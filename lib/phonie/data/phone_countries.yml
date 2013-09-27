@@ -587,10 +587,10 @@
   :iso_3166_code: MU
   :name: Mauritius
   :international_dialing_prefix: '00'
-  :area_code: '[1-9]\d{2}'
+  :area_code: '5?[1-9]\d{2}'
   :local_number_format: \d{4}
-  :number_format: \d{7}
-  :mobile_format: (7\d{6}|87\d{5}|9\d{6}|421\d{4}|422\d{4}|423\d{4}|428\d{4}|429\d{4}|49\d{5}|25\d{5})
+  :number_format: \d{7,8}
+  :mobile_format: (57\d{6}|587\d{5}|59\d{6}|5421\d{4}|5422\d{4}|5423\d{4}|5428\d{4}|5429\d{4}|549\d{5}|525\d{5})
 -
   :country_code: '994'
   :national_dialing_prefix: 8
