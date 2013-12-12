@@ -1,5 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 
+if defined? ActiveModel
+
 require 'active_model'
 require 'phonie/railties/validator'
 class SomeModel < Struct.new(:phone)
@@ -34,4 +36,6 @@ class PhoneValidatorTest < Phonie::TestCase
 
     assert !model.errors[:phone].empty?
   end
+end
+
 end

@@ -1,5 +1,3 @@
-require 'active_model'
-
 # An object representing a phone number.
 #
 # The phone number is recorded in 3 separate parts:
@@ -16,6 +14,7 @@ module Phonie
     EXTENSION = /[ ]*(ext|ex|x|xt|#|:)+[^0-9]*\(*([-0-9]{1,})\)*#?$/i
 
     attr_accessor :country_code, :area_code, :number, :extension, :country
+    attr_reader :errors
 
     cattr_accessor :default_country_code
     cattr_accessor :default_area_code
@@ -33,11 +32,6 @@ module Phonie
       :us => "(%a) %f-%l"
     }
 
-    include ActiveModel::Validations
-    validates :country_code, :presence => true
-    validates :area_code, :presence => true
-    validates :number, :presence => true
-
     def initialize(*hash_or_args)
       if hash_or_args.first.is_a?(Hash)
         hash_or_args = hash_or_args.first
@@ -46,23 +40,24 @@ module Phonie
         keys = {:number => 0, :area_code => 1, :country_code => 2, :extension => 3, :country => 4}
       end
 
-      self.number       = hash_or_args[ keys[:number] ]
-      self.area_code    = hash_or_args[ keys[:area_code] ] || self.default_area_code
-      self.country_code = hash_or_args[ keys[:country_code] ] || self.default_country_code
-      self.extension    = hash_or_args[ keys[:extension] ]
-      self.country      = hash_or_args[ keys[:country] ]
+      @number       = hash_or_args[ keys[:number] ]
+      @area_code    = hash_or_args[ keys[:area_code] ] || self.default_area_code
+      @country_code = hash_or_args[ keys[:country_code] ] || self.default_country_code
+      @extension    = hash_or_args[ keys[:extension] ]
+      @country      = hash_or_args[ keys[:country] ]
+      @errors = {}
     end
 
     def self.parse!(string, options = {})
-      pn = parse(string, options)
-      raise ArgumentError.new("#{string} is not a valid phone number") unless pn && pn.valid?
-      pn
+      phone_number = parse(string, options)
+      raise ArgumentError.new("#{string} is not a valid phone number") unless phone_number && phone_number.valid?
+      phone_number
     end
 
     # create a new phone number by parsing a string
     # the format of the string is detect automatically (from FORMATS)
     def self.parse(string, options = {})
-      return unless string.present?
+      return if string.nil?
 
       options[:country_code] ||= self.default_country_code
       options[:area_code]    ||= self.default_area_code
@@ -148,6 +143,11 @@ module Phonie
       area_code == self.class.default_area_code
     end
 
+    def valid?
+      validate
+      errors.empty?
+    end
+
     # comparison of 2 phone objects
     def ==(other)
       methods = [:country_code, :area_code, :number, :extension]
@@ -155,6 +155,12 @@ module Phonie
     end
 
     private
+
+    def validate
+      [:country_code, :area_code, :number].each do |field|
+	errors[field] = ["can't be blank"] if send(field).to_s == ''
+      end
+    end
 
     # split string into hash with keys :country_code, :area_code and :number
     def self.split_to_parts(string, options = {})

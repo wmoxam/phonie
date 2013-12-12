@@ -1,4 +1,12 @@
+require 'active_model'
+
 I18n.load_path += Dir.glob( File.expand_path('../locales/*.{rb,yml}', __FILE__) )
+
+module Phonie
+  class Phone
+    include ActiveModel::Validations
+  end
+end
 
 class PhoneValidator < ActiveModel::EachValidator
   def validate_each(object, attribute, value)
