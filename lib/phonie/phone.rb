@@ -1,5 +1,3 @@
-require 'forwardable'
-
 # An object representing a phone number.
 #
 # The phone number is recorded in 3 separate parts:
@@ -8,21 +6,15 @@ require 'forwardable'
 # * number - e.g. '5125486', '451588'
 #
 # All parts are mandatory, but country code and area code can be set for all phone numbers using
-#   Phone.default_country_code
-#   Phone.default_area_code
+#   Phone.configuration.default_country_code
+#   Phone.configuration.default_area_code
 #
 
 module Phonie
   class Phone
-    extend Forwardable
-
     EXTENSION = /[ ]*(ext|ex|x|xt|#|:)+[^0-9]*\(*([-0-9]{1,})\)*#?$/i
 
-    attr_reader :country_code, :area_code, :errors, :number, :extension, :country, :configuration
-
-    def_delegators :configuration, :default_area_code, :default_country_code, :n1_length,
-                                   :default_area_code=, :default_country_code=, :n1_length=
-
+    attr_reader :country_code, :area_code, :errors, :number, :extension, :country
 
     def self.named_formats  
       {
@@ -37,6 +29,10 @@ module Phonie
       Configuration.instance
     end
 
+    def configuration
+      self.class.configuration
+    end
+
     def initialize(*hash_or_args)
       if hash_or_args.first.is_a?(Hash)
         hash_or_args = hash_or_args.first
@@ -45,11 +41,9 @@ module Phonie
         keys = {:number => 0, :area_code => 1, :country_code => 2, :extension => 3, :country => 4}
       end
 
-      @configuration = self.class.configuration
-
       @number       = hash_or_args[ keys[:number] ]
-      @area_code    = hash_or_args[ keys[:area_code] ] || @configuration.default_area_code
-      @country_code = hash_or_args[ keys[:country_code] ] || @configuration.default_country_code
+      @area_code    = hash_or_args[ keys[:area_code] ] || configuration.default_area_code
+      @country_code = hash_or_args[ keys[:country_code] ] || configuration.default_country_code
       @extension    = hash_or_args[ keys[:extension] ]
       @country      = hash_or_args[ keys[:country] ]
       @errors = {}
