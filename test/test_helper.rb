@@ -23,8 +23,10 @@ end
 class Phonie::TestCase < Test::Unit::TestCase
 
   def setup
-    Phonie::Phone.default_country_code = nil
-    Phonie::Phone.default_area_code = nil
+    Phonie::Phone.configure do |config|
+      config.default_country_code = nil
+      config.default_area_code = nil
+    end
   end
 
   def default_test

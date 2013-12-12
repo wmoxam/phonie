@@ -7,16 +7,13 @@ class PhoneTest < Phonie::TestCase
   end
 
   def test_number_without_country_code_initialize
-    Phonie::Phone.default_country_code = nil
-
     pn = Phonie::Phone.new '5125486', '91'
     assert !pn.valid?
     assert_equal ["can't be blank"], pn.errors[:country_code]
   end
 
   def test_number_without_area_code_initialize
-    Phonie::Phone.default_country_code = '1'
-    Phonie::Phone.default_area_code = nil
+    Phonie::Phone.configuration.default_country_code = '1'
 
     pn = Phonie::Phone.new '451588'
     assert !pn.valid?
@@ -24,8 +21,8 @@ class PhoneTest < Phonie::TestCase
   end
 
   def test_number_with_default_area_code_initialize
-    Phonie::Phone.default_country_code = '385'
-    Phonie::Phone.default_area_code = '47'
+    Phonie::Phone.configuration.default_country_code = '385'
+    Phonie::Phone.configuration.default_area_code = '47'
 
     pn = Phonie::Phone.new '451588'
     assert pn.number == '451588'
@@ -34,7 +31,7 @@ class PhoneTest < Phonie::TestCase
   end
 
   def test_number_with_default_country_code_initialize
-    Phonie::Phone.default_country_code = '386'
+    Phonie::Phone.configuration.default_country_code = '386'
 
     pn = Phonie::Phone.new '5125486', '91'
     assert pn.number == '5125486'
@@ -43,7 +40,7 @@ class PhoneTest < Phonie::TestCase
   end
 
   def test_number_with_country_code_initialize
-    Phonie::Phone.default_country_code = '387'
+    Phonie::Phone.configuration.default_country_code = '387'
 
     pn = Phonie::Phone.new '5125486', '91', '385'
     assert pn.number == '5125486'
@@ -57,8 +54,6 @@ class PhoneTest < Phonie::TestCase
   end
 
   def test_parse_short_without_special_characters_without_country
-    Phonie::Phone.default_country_code = nil
-
     assert_nil Phonie::Phone.parse "0915125486"
 
     assert_raise ArgumentError do
@@ -67,8 +62,6 @@ class PhoneTest < Phonie::TestCase
   end
 
   def test_parse_short_with_special_characters_without_country
-    Phonie::Phone.default_country_code = nil
-
     assert_nil Phonie::Phone.parse "091/512-5486"
 
     assert_raise ArgumentError do
@@ -77,31 +70,28 @@ class PhoneTest < Phonie::TestCase
   end
 
   def test_to_s
-    Phonie::Phone.default_country_code = nil
     pn = Phonie::Phone.new '5125486', '91', '385'
     assert pn.to_s == '+385915125486'
   end
 
   def test_to_s_without_country_code
-    Phonie::Phone.default_country_code = '385'
+    Phonie::Phone.configuration.default_country_code = '385'
     pn = Phonie::Phone.new '5125486', '91'
     assert pn.format("0%a%n") == '0915125486'
   end
 
   def test_format_special_with_country_code
-    Phonie::Phone.default_country_code = nil
     pn = Phonie::Phone.new '5125486', '91', '385'
     assert pn.format("+ %c (%a) %n") == '+ 385 (91) 5125486'
   end
 
   def test_format_special_without_country_code
-    Phonie::Phone.default_country_code = '385'
+    Phonie::Phone.configuration.default_country_code = '385'
     pn = Phonie::Phone.new '5125486', '91'
     assert_equal '091/512-5486', pn.format("%A/%f-%l")
   end
 
   def test_format_with_symbol_specifier
-    Phonie::Phone.default_country_code = nil
     pn = Phonie::Phone.new '5125486', '91', '385'
     assert_equal '+385 (0) 91 512 5486', pn.format(:europe)
   end

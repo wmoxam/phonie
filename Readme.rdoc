@@ -23,15 +23,17 @@ If the country or area code isn't given in the string, you must set it, otherwis
     Phonie::Phone.parse '(091) 512 5486', :country_code => '385'
 
 If you feel that it's tedious, set the default country code once (in your config/environment.rb):
-    Phonie::Phone.default_country_code = '385'
+    Phonie::Phone.configuration.default_country_code = '385'
     Phonie::Phone.parse '091/512-5486'
     Phonie::Phone.parse '(091) 512 5486'
 
 Same goes for the area code:
     Phonie::Phone.parse '451-588', :country_code => '385', :area_code => '47'
-or
-    Phonie::Phone.default_country_code = '385'
-    Phonie::Phone.default_area_code = '47'
+or it can be configured in a block
+    Phonie::Phone.configure do |config|
+      config.default_country_code = '385'
+      config.default_area_code = '47'
+    end
 
     Phonie::Phone.parse '451-588'
 

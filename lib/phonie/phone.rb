@@ -1,3 +1,5 @@
+require 'forwardable'
+
 # An object representing a phone number.
 #
 # The phone number is recorded in 3 separate parts:
@@ -9,28 +11,31 @@
 #   Phone.default_country_code
 #   Phone.default_area_code
 #
+
 module Phonie
   class Phone
+    extend Forwardable
+
     EXTENSION = /[ ]*(ext|ex|x|xt|#|:)+[^0-9]*\(*([-0-9]{1,})\)*#?$/i
 
-    attr_accessor :country_code, :area_code, :number, :extension, :country
-    attr_reader :errors
+    attr_reader :country_code, :area_code, :errors, :number, :extension, :country, :configuration
 
-    cattr_accessor :default_country_code
-    cattr_accessor :default_area_code
-    cattr_accessor :named_formats
+    def_delegators :configuration, :default_area_code, :default_country_code, :n1_length,
+                                   :default_area_code=, :default_country_code=, :n1_length=
 
-    # length of first number part (using multi number format)
-    cattr_accessor :n1_length
-    # default length of first number part
-    @@n1_length = 3
 
-    @@named_formats = {
-      :default => "+%c%a%n",
-      :default_with_extension => "+%c%a%nx%x",
-      :europe => '+%c (0) %a %f %l',
-      :us => "(%a) %f-%l"
-    }
+    def self.named_formats  
+      {
+        default: "+%c%a%n",
+        default_with_extension: "+%c%a%nx%x",
+        europe: '+%c (0) %a %f %l',
+        us: "(%a) %f-%l"
+      }
+    end
+
+    def self.configuration
+      Configuration.instance
+    end
 
     def initialize(*hash_or_args)
       if hash_or_args.first.is_a?(Hash)
@@ -40,12 +45,18 @@ module Phonie
         keys = {:number => 0, :area_code => 1, :country_code => 2, :extension => 3, :country => 4}
       end
 
+      @configuration = self.class.configuration
+
       @number       = hash_or_args[ keys[:number] ]
-      @area_code    = hash_or_args[ keys[:area_code] ] || self.default_area_code
-      @country_code = hash_or_args[ keys[:country_code] ] || self.default_country_code
+      @area_code    = hash_or_args[ keys[:area_code] ] || @configuration.default_area_code
+      @country_code = hash_or_args[ keys[:country_code] ] || @configuration.default_country_code
       @extension    = hash_or_args[ keys[:extension] ]
       @country      = hash_or_args[ keys[:country] ]
       @errors = {}
+    end
+
+    def self.configure(&block)
+      yield configuration
     end
 
     def self.parse!(string, options = {})
@@ -59,8 +70,8 @@ module Phonie
     def self.parse(string, options = {})
       return if string.nil?
 
-      options[:country_code] ||= self.default_country_code
-      options[:area_code]    ||= self.default_area_code
+      options[:country_code] ||= configuration.default_country_code
+      options[:area_code]    ||= configuration.default_area_code
 
       extension = extract_extension(string)
       normalized = normalize(string)
@@ -96,12 +107,12 @@ module Phonie
 
     # first n characters of :number
     def number1
-      number[0...self.class.n1_length]
+      number[0...configuration.n1_length]
     end
 
     # everything left from number after the first n characters (see number1)
     def number2
-      n2_length = number.size - self.class.n1_length
+      n2_length = number.size - configuration.n1_length
       number[-n2_length, n2_length]
     end
 
@@ -121,8 +132,8 @@ module Phonie
     #   pn.format(:europe)
     def format(fmt)
       if fmt.is_a?(Symbol)
-        raise ArgumentError.new("The format #{fmt} doesn't exist") unless named_formats.has_key?(fmt)
-        format_number named_formats[fmt]
+        raise ArgumentError.new("The format #{fmt} doesn't exist") unless format_exists?(fmt)
+        format_number self.class.named_formats[fmt]
       else
         format_number(fmt)
       end
@@ -135,12 +146,12 @@ module Phonie
 
     # does this number belong to the default country code?
     def has_default_country_code?
-      country_code == self.class.default_country_code
+      country_code == configuration.default_country_code
     end
 
     # does this number belong to the default area code?
     def has_default_area_code?
-      area_code == self.class.default_area_code
+      area_code == configuration.default_area_code
     end
 
     def valid?
@@ -155,6 +166,10 @@ module Phonie
     end
 
     private
+
+    def format_exists?(format)
+      self.class.named_formats.has_key?(format)
+    end
 
     def validate
       [:country_code, :area_code, :number].each do |field|

@@ -1,3 +1,5 @@
+require 'yaml'
+
 module Phonie
   class Country < Struct.new(:name, :country_code, :char_2_code, :iso_3166_code, :area_code, :local_number_format, :mobile_format, :full_number_length, :number_format, :national_dialing_prefix)
     def self.load

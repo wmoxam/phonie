@@ -51,7 +51,7 @@ class PTTest < Phonie::TestCase
 
   # 707-708: Premium Numbers
   def test_707
-    Phonie::Phone.default_country_code = '351'
+    Phonie::Phone.configuration.default_country_code = '351'
     parse_test('707 123 456', '351', '707', '123456')
   end
 
@@ -59,17 +59,17 @@ class PTTest < Phonie::TestCase
 
   # 800: Numero verde ("Green Number")
   def test_800
-    Phonie::Phone.default_country_code = '351'
+    Phonie::Phone.configuration.default_country_code = '351'
     parse_test('800 123 456', '351', '800', '123456')
   end
   # 808: Numero azul ("Blue Number")
   def test_808
-    Phonie::Phone.default_country_code = '351'
+    Phonie::Phone.configuration.default_country_code = '351'
     parse_test('808 123 456', '351', '808', '123456')
   end
   # 809: Custo partilhado ("Shared cost")
   def test_809
-    Phonie::Phone.default_country_code = '351'
+    Phonie::Phone.configuration.default_country_code = '351'
     parse_test('809 123 456', '351', '809', '123456', 'Portugal', false)
   end
 
@@ -108,14 +108,13 @@ class PTTest < Phonie::TestCase
   end
 
   def test_validates
-    Phonie::Phone.default_country_code = nil
     assert_equal Phonie::Phone.valid?('00351211234567'), true
     assert_equal Phonie::Phone.valid?('00351911234567'), true
     assert_equal Phonie::Phone.valid?('+351931234567'), true
     assert_equal Phonie::Phone.valid?('+351 (911) 123 456'), true
     assert_equal Phonie::Phone.valid?('+351921123456'), true
 
-    Phonie::Phone.default_country_code = '351'
+    Phonie::Phone.configuration.default_country_code = '351'
     assert_equal Phonie::Phone.valid?('(931) 234-567'), true
     assert_equal Phonie::Phone.valid?('(211) 234 567'), true
     assert_equal Phonie::Phone.valid?('232-123-456'), true
