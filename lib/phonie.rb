@@ -4,7 +4,4 @@ require "phonie/phone"
 require "phonie/country"
 require "phonie/railties/validator"
 
-module Phonie
-end
-
 Phonie::Country.load
