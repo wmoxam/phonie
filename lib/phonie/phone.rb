@@ -16,15 +16,6 @@ module Phonie
 
     attr_reader :configuration, :country_code, :area_code, :errors, :number, :extension, :country
 
-    def self.named_formats  
-      {
-        default: "+%c%a%n",
-        default_with_extension: "+%c%a%nx%x",
-        europe: '+%c (0) %a %f %l',
-        us: "(%a) %f-%l"
-      }
-    end
-
     def initialize(*hash_or_args)
       if hash_or_args.first.is_a?(Hash)
         hash_or_args = hash_or_args.first
@@ -99,27 +90,8 @@ module Phonie
       number[-n2_length, n2_length]
     end
 
-    # Formats the phone number.
-    #
-    # if the method argument is a String, it is used as a format string, with the following fields being interpolated:
-    #
-    # * %c - country_code (385)
-    # * %a - area_code (91)
-    # * %A - area_code with leading zero (091)
-    # * %n - number (5125486)
-    # * %f - first @@n1_length characters of number (configured through Phone.n1_length), default is 3 (512)
-    # * %l - last characters of number (5486)
-    # * %x - entire extension
-    #
-    # if the method argument is a Symbol, it is used as a lookup key for a format String in Phone.named_formats
-    #   pn.format(:europe)
     def format(fmt)
-      if fmt.is_a?(Symbol)
-        raise ArgumentError.new("The format #{fmt} doesn't exist") unless format_exists?(fmt)
-        format_number self.class.named_formats[fmt]
-      else
-        format_number(fmt)
-      end
+      Formatter.new(format: fmt, phone_number: self).to_s
     end
 
     # the default format is "+%c%a%n"
@@ -150,10 +122,6 @@ module Phonie
 
     private
 
-    def format_exists?(format)
-      self.class.named_formats.has_key?(format)
-    end
-
     def validate
       [:country_code, :area_code, :number].each do |field|
 	errors[field] = ["can't be blank"] if send(field).to_s == ''
@@ -175,16 +143,6 @@ module Phonie
     def self.extract_extension(string)
       return unless string && string.match(EXTENSION)
       Regexp.last_match[2]
-    end
-
-    def format_number(fmt)
-      fmt.gsub("%c", country_code || "").
-        gsub("%a", area_code || "").
-        gsub("%A", area_code_long || "").
-        gsub("%n", number || "").
-        gsub("%f", number1 || "").
-        gsub("%l", number2 || "").
-        gsub("%x", extension || "")
     end
   end
 end
