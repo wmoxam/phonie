@@ -14,18 +14,18 @@ class INTest < Phonie::TestCase
   end
 
   def test_long_with_default_country_code
-    Phonie::Phone.configuration.default_country_code = '91'
+    Phonie.configuration.default_country_code = '91'
     parse_test('9124459000', '91', '9124', '459000')
   end
 
   def test_short_with_default_country_code_and_area_code
-    Phonie::Phone.configuration.default_country_code = '91'
-    Phonie::Phone.configuration.default_area_code = '9124'
+    Phonie.configuration.default_country_code = '91'
+    Phonie.configuration.default_area_code = '9124'
     parse_test('4529000', '91', '9124', '4529000')
   end
 
   def test_lengths
-    Phonie::Phone.configuration.default_country_code = '91'
+    Phonie.configuration.default_country_code = '91'
 
     phone = Phonie::Phone.parse("919812344")
     assert_nil phone

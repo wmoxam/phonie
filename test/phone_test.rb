@@ -13,7 +13,7 @@ class PhoneTest < Phonie::TestCase
   end
 
   def test_number_without_area_code_initialize
-    Phonie::Phone.configuration.default_country_code = '1'
+    Phonie.configuration.default_country_code = '1'
 
     pn = Phonie::Phone.new '451588'
     assert !pn.valid?
@@ -21,8 +21,8 @@ class PhoneTest < Phonie::TestCase
   end
 
   def test_number_with_default_area_code_initialize
-    Phonie::Phone.configuration.default_country_code = '385'
-    Phonie::Phone.configuration.default_area_code = '47'
+    Phonie.configuration.default_country_code = '385'
+    Phonie.configuration.default_area_code = '47'
 
     pn = Phonie::Phone.new '451588'
     assert pn.number == '451588'
@@ -31,7 +31,7 @@ class PhoneTest < Phonie::TestCase
   end
 
   def test_number_with_default_country_code_initialize
-    Phonie::Phone.configuration.default_country_code = '386'
+    Phonie.configuration.default_country_code = '386'
 
     pn = Phonie::Phone.new '5125486', '91'
     assert pn.number == '5125486'
@@ -40,7 +40,7 @@ class PhoneTest < Phonie::TestCase
   end
 
   def test_number_with_country_code_initialize
-    Phonie::Phone.configuration.default_country_code = '387'
+    Phonie.configuration.default_country_code = '387'
 
     pn = Phonie::Phone.new '5125486', '91', '385'
     assert pn.number == '5125486'
@@ -75,7 +75,7 @@ class PhoneTest < Phonie::TestCase
   end
 
   def test_to_s_without_country_code
-    Phonie::Phone.configuration.default_country_code = '385'
+    Phonie.configuration.default_country_code = '385'
     pn = Phonie::Phone.new '5125486', '91'
     assert pn.format("0%a%n") == '0915125486'
   end
@@ -86,7 +86,7 @@ class PhoneTest < Phonie::TestCase
   end
 
   def test_format_special_without_country_code
-    Phonie::Phone.configuration.default_country_code = '385'
+    Phonie.configuration.default_country_code = '385'
     pn = Phonie::Phone.new '5125486', '91'
     assert_equal '091/512-5486', pn.format("%A/%f-%l")
   end

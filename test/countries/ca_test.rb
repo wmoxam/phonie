@@ -8,13 +8,13 @@ class CATest < Phonie::TestCase
   end
 
   def test_long_with_default_country_code
-    Phonie::Phone.configuration.default_country_code = '1'
+    Phonie.configuration.default_country_code = '1'
     parse_test('9059735100', '1', '905', '9735100', 'Canada')
   end
 
   def test_short_with_default_country_code_and_area_code
-    Phonie::Phone.configuration.default_country_code = '1'
-    Phonie::Phone.configuration.default_area_code = '416'
+    Phonie.configuration.default_country_code = '1'
+    Phonie.configuration.default_area_code = '416'
     parse_test('9735100', '1', '416', '9735100', 'Canada')
   end
 end

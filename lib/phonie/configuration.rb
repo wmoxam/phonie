@@ -10,4 +10,12 @@ module Phonie
       @n1_length = 3
     end
   end
+
+  def self.configure(&block)
+    yield configuration
+  end
+
+  def self.configuration
+    Configuration.instance
+  end
 end

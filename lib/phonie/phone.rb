@@ -6,15 +6,15 @@
 # * number - e.g. '5125486', '451588'
 #
 # All parts are mandatory, but country code and area code can be set for all phone numbers using
-#   Phone.configuration.default_country_code
-#   Phone.configuration.default_area_code
+#   Phonie.configuration.default_country_code
+#   Phonie.configuration.default_area_code
 #
 
 module Phonie
   class Phone
     EXTENSION = /[ ]*(ext|ex|x|xt|#|:)+[^0-9]*\(*([-0-9]{1,})\)*#?$/i
 
-    attr_reader :country_code, :area_code, :errors, :number, :extension, :country
+    attr_reader :configuration, :country_code, :area_code, :errors, :number, :extension, :country
 
     def self.named_formats  
       {
@@ -25,32 +25,21 @@ module Phonie
       }
     end
 
-    def self.configuration
-      Configuration.instance
-    end
-
-    def configuration
-      self.class.configuration
-    end
-
     def initialize(*hash_or_args)
       if hash_or_args.first.is_a?(Hash)
         hash_or_args = hash_or_args.first
-        keys = {:country => :country, :number => :number, :area_code => :area_code, :country_code => :country_code, :extension => :extension}
+        keys = {:configuration => :configuration, :country => :country, :number => :number, :area_code => :area_code, :country_code => :country_code, :extension => :extension}
       else
-        keys = {:number => 0, :area_code => 1, :country_code => 2, :extension => 3, :country => 4}
+        keys = {:number => 0, :area_code => 1, :country_code => 2, :extension => 3, :country => 4, :configuration => 5}
       end
 
+      @configuration = hash_or_args[ keys[:configuration] ] || Phonie.configuration
       @number       = hash_or_args[ keys[:number] ]
       @area_code    = hash_or_args[ keys[:area_code] ] || configuration.default_area_code
       @country_code = hash_or_args[ keys[:country_code] ] || configuration.default_country_code
       @extension    = hash_or_args[ keys[:extension] ]
       @country      = hash_or_args[ keys[:country] ]
       @errors = {}
-    end
-
-    def self.configure(&block)
-      yield configuration
     end
 
     def self.parse!(string, options = {})
@@ -64,8 +53,8 @@ module Phonie
     def self.parse(string, options = {})
       return if string.nil?
 
-      options[:country_code] ||= configuration.default_country_code
-      options[:area_code]    ||= configuration.default_area_code
+      options[:country_code] ||= Phonie.configuration.default_country_code
+      options[:area_code]    ||= Phonie.configuration.default_area_code
 
       extension = extract_extension(string)
       normalized = normalize(string)

@@ -12,12 +12,12 @@ class USTest < Phonie::TestCase
   end
 
   def test_long_with_default_country_code
-    Phonie::Phone.configuration.default_country_code = '1'
+    Phonie.configuration.default_country_code = '1'
     parse_test('2069735100', '1', '206', '9735100', 'United States')
   end
 
   def test_short_with_default_country_code_and_area_code
-    Phonie::Phone.configure do |config|
+    Phonie.configure do |config|
       config.default_country_code = '1'
       config.default_area_code = '206'
     end
