@@ -21,14 +21,9 @@ module Phonie
 
     def self.all
       @@all ||= begin
-        data_file = File.join(File.dirname(__FILE__), 'data', 'phone_countries.yml')
-
-        all = []
-        YAML.load(File.read(data_file)).each do |country_params|
-	  country = Country.new(country_params)
-          all << country if country.valid?
-        end
-        all
+        YAML.load_file(Configuration.instance.data_file_path).collect do |country_params|
+	  Country.new(country_params)
+        end.select {|country| country.valid? }
       end
     end
 
@@ -42,10 +37,6 @@ module Phonie
 
     def self.all_by_name
       @@all_by_name ||= Hash[*all.map{|c| [c.name.downcase, c] }.flatten]
-    end
-
-    def valid?
-      !!(name && area_code && local_number_format && number_format)
     end
 
     def self.find_all_by_phone_code(code)
@@ -113,6 +104,10 @@ module Phonie
       return nil if @national_dialing_prefix == "None"
 
       @national_dialing_prefix
+    end
+
+    def valid?
+      !!(name && area_code && local_number_format && number_format)
     end
 
     private
