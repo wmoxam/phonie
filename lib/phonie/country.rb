@@ -1,33 +1,63 @@
 require 'yaml'
 
 module Phonie
-  class Country < Struct.new(:name, :country_code, :char_2_code, :iso_3166_code, :area_code, :local_number_format, :mobile_format, :full_number_length, :number_format, :national_dialing_prefix)
-    def self.load
-      data_file = File.join(File.dirname(__FILE__), 'data', 'phone_countries.yml')
-
-      all = []
-      YAML.load(File.read(data_file)).each do |c|
-        next unless c[:area_code] && c[:local_number_format]
-        all << Country.new(c[:name], c[:country_code], c[:char_2_code], c[:iso_3166_code], c[:area_code], c[:local_number_format], c[:mobile_format], c[:full_number_length], c[:number_format], c[:national_dialing_prefix])
-      end
-      all
+  class Country
+    attr_reader :name, :country_code, :char_2_code, :iso_3166_code, :area_code,
+	    :local_number_format, :mobile_format, :full_number_length,
+	    :number_format 
+    
+    def initialize(params)
+      @name = params[:name]
+      @country_code = params[:country_code]
+      @char_2_code = params[:char_2_code]
+      @iso_3166_code = params[:iso_3166_code]
+      @area_code = params[:area_code]
+      @local_number_format = params[:local_number_format]
+      @mobile_format = params[:mobile_format]
+      @full_number_length = params[:full_number_length]
+      @number_format = params[:number_format]
+      @national_dialing_prefix = params[:national_dialing_prefix]
     end
 
-    COUNTRIES = self.load
-    COUNTRIES_BY_PHONE_CODE   = COUNTRIES.inject(Hash.new){|h, c| (h[c.country_code] ||= []) << c; h }
-    COUNTRIES_BY_COUNTRY_CODE = Hash[*COUNTRIES.map{|c| [c.iso_3166_code.downcase, c] }.flatten]
-    COUNTRIES_BY_NAME         = Hash[*COUNTRIES.map{|c| [c.name.downcase, c] }.flatten]
+    def self.all
+      @@all ||= begin
+        data_file = File.join(File.dirname(__FILE__), 'data', 'phone_countries.yml')
+
+        all = []
+        YAML.load(File.read(data_file)).each do |country_params|
+	  country = Country.new(country_params)
+          all << country if country.valid?
+        end
+        all
+      end
+    end
+
+    def self.all_by_phone_code
+      @@all_by_phone_code ||= all.inject(Hash.new){|h, c| (h[c.country_code] ||= []) << c; h }
+    end
+
+    def self.all_by_country_code
+      @@all_by_country_name ||=  Hash[*all.map{|c| [c.iso_3166_code.downcase, c] }.flatten]
+    end
+
+    def self.all_by_name
+      @@all_by_name ||= Hash[*all.map{|c| [c.name.downcase, c] }.flatten]
+    end
+
+    def valid?
+      !!(name && area_code && local_number_format && number_format)
+    end
 
     def self.find_all_by_phone_code(code)
-      COUNTRIES_BY_PHONE_CODE[code] || []
+      all_by_phone_code[code] || []
     end
 
     def self.find_by_country_code(code)
-      COUNTRIES_BY_COUNTRY_CODE[code.downcase] if code
+      all_by_country_code[code.downcase] if code
     end
 
     def self.find_by_name(name)
-      COUNTRIES_BY_NAME[name.downcase] if name
+      all_by_name[name.downcase] if name
     end
 
     # detect country from the string entered
@@ -40,7 +70,7 @@ module Phonie
       end
 
       # then search all for a full match
-      country || COUNTRIES.find {|country| country.matches_full_number?(string) }
+      country || all.find {|country| country.matches_full_number?(string) }
     end
 
     def to_s
@@ -80,12 +110,9 @@ module Phonie
     end
 
     def national_dialing_prefix
-      prefix = super
-      if prefix == "None"
-        nil
-      else
-        prefix
-      end
+      return nil if @national_dialing_prefix == "None"
+
+      @national_dialing_prefix
     end
 
     private
