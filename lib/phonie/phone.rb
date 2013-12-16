@@ -14,22 +14,16 @@ module Phonie
   class Phone
     EXTENSION = /[ ]*(ext|ex|x|xt|#|:)+[^0-9]*\(*([-0-9]{1,})\)*#?$/i
 
-    attr_reader :configuration, :country_code, :area_code, :errors, :number, :extension, :country
+    attr_reader :country_code, :area_code, :errors, :number, :extension, :country
 
-    def initialize(*hash_or_args)
-      if hash_or_args.first.is_a?(Hash)
-        hash_or_args = hash_or_args.first
-        keys = {:configuration => :configuration, :country => :country, :number => :number, :area_code => :area_code, :country_code => :country_code, :extension => :extension}
-      else
-        keys = {:number => 0, :area_code => 1, :country_code => 2, :extension => 3, :country => 4, :configuration => 5}
-      end
+    def initialize(*args)
+      params = normalize_args(args)
 
-      @configuration = hash_or_args[ keys[:configuration] ] || Phonie.configuration
-      @number       = hash_or_args[ keys[:number] ]
-      @area_code    = hash_or_args[ keys[:area_code] ] || configuration.default_area_code
-      @country_code = hash_or_args[ keys[:country_code] ] || configuration.default_country_code
-      @extension    = hash_or_args[ keys[:extension] ]
-      @country      = hash_or_args[ keys[:country] ]
+      @number       = params[:number]
+      @area_code    = params[:area_code]
+      @country_code = params[:country_code]
+      @extension    = params[:extension]
+      @country      = params[:country]
       @errors = {}
     end
 
@@ -81,12 +75,12 @@ module Phonie
 
     # first n characters of :number
     def number1
-      number[0...configuration.n1_length]
+      number[0...Phonie.configuration.n1_length]
     end
 
     # everything left from number after the first n characters (see number1)
     def number2
-      n2_length = number.size - configuration.n1_length
+      n2_length = number.size - Phonie.configuration.n1_length
       number[-n2_length, n2_length]
     end
 
@@ -101,12 +95,12 @@ module Phonie
 
     # does this number belong to the default country code?
     def has_default_country_code?
-      country_code == configuration.default_country_code
+      country_code == Phonie.configuration.default_country_code
     end
 
     # does this number belong to the default area code?
     def has_default_area_code?
-      area_code == configuration.default_area_code
+      area_code == Phonie.configuration.default_area_code
     end
 
     def valid?
@@ -121,6 +115,27 @@ module Phonie
     end
 
     private
+
+    def defaults
+      { area_code:    Phonie.configuration.default_area_code,
+	country_code: Phonie.configuration.default_country_code }
+    end
+
+    def normalize_args(args)
+      hash = if args.first.respond_to?(:key?)
+	args.first
+      else
+        h = {}
+        h[:number] =       args[0] if args.length > 0
+        h[:area_code] =    args[1] if args.length > 1
+        h[:country_code] = args[2] if args.length > 2
+        h[:extension] =    args[3] if args.length > 3
+        h[:country] =      args[4] if args.length > 4
+	h
+      end
+
+      defaults.merge(hash)
+    end
 
     def validate
       [:country_code, :area_code, :number].each do |field|
