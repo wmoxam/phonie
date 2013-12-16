@@ -27,7 +27,7 @@ module Phonie
       end
 
       raise ArgumentError.new("No valid format provided") if @format.nil?
-      raise ArgumentError.new("No vlaid phone number provided") if @phone_number.nil?
+      raise ArgumentError.new("No valid phone number provided") if @phone_number.nil?
     end
 
     def self.named_formats

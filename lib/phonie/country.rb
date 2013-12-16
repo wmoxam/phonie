@@ -21,7 +21,7 @@ module Phonie
 
     def self.all
       @@all ||= begin
-        YAML.load_file(Configuration.instance.data_file_path).collect do |country_params|
+        YAML.load_file(Phonie.configuration.data_file_path).collect do |country_params|
 	  Country.new(country_params)
         end.select {|country| country.valid? }
       end
