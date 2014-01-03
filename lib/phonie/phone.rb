@@ -125,13 +125,13 @@ module Phonie
       hash = if args.first.respond_to?(:key?)
 	args.first
       else
-        h = {}
-        h[:number] =       args[0] if args.length > 0
-        h[:area_code] =    args[1] if args.length > 1
-        h[:country_code] = args[2] if args.length > 2
-        h[:extension] =    args[3] if args.length > 3
-        h[:country] =      args[4] if args.length > 4
-	h
+        {}.tap do |h|
+          h[:number] =       args[0] if args.length > 0
+          h[:area_code] =    args[1] if args.length > 1
+          h[:country_code] = args[2] if args.length > 2
+          h[:extension] =    args[3] if args.length > 3
+          h[:country] =      args[4] if args.length > 4
+	end
       end
 
       defaults.merge(hash)

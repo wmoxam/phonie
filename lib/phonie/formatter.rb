@@ -42,13 +42,13 @@ module Phonie
     def to_s
       pn = phone_number
 
-      format.gsub("%c", pn.country_code || "").
-        gsub("%a", pn.area_code || "").
-        gsub("%A", pn.area_code_long || "").
-        gsub("%n", pn.number || "").
-        gsub("%f", pn.number1 || "").
-        gsub("%l", pn.number2 || "").
-        gsub("%x", pn.extension || "")
+      format.gsub("%c", pn.country_code.to_s).
+        gsub("%a", pn.area_code.to_s).
+        gsub("%A", pn.area_code_long.to_s).
+        gsub("%n", pn.number.to_s).
+        gsub("%f", pn.number1.to_s).
+        gsub("%l", pn.number2.to_s).
+        gsub("%x", pn.extension.to_s)
     end
   end
 end
