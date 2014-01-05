@@ -84,7 +84,7 @@ Phonie includes an ActiveModel validator. If you are using ActiveModel you can v
 	end
 
         model = SomeModel.new(phone_number: '')
-	model.valid? # true
+	model.valid? # false
 
 	model = SomeModel.new(phone_number: '+1 251 123 4567')
 	model.valid?  # true
