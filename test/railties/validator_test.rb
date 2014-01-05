@@ -1,7 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 require 'active_model'
-
 require 'phonie/railties/validator'
+
 class SomeModel < Struct.new(:phone_number)
   include ActiveModel::Validations
   validates :phone_number, phone: true
