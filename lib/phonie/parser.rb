@@ -33,7 +33,7 @@ module Phonie
     end
 
     def valid?
-      !!(area_code && local_number_format && number_format)
+      !!(country_code && area_code && local_number_format && number_format)
     end
 
     private
