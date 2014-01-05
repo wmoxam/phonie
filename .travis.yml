@@ -6,7 +6,8 @@ before_script: export RUBY_GC_MALLOC_LIMIT=90000000
 rvm:
   - 1.9.3
   - 2.0.0
-  - rbx-19mode
-  - ruby-head
+  - 2.1.0
+  - jruby-19mode
+  - rbx-2.2.3
 
 script: rake
