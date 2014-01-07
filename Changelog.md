@@ -1,7 +1,7 @@
 3.0.0
 =====
 
-* no longer modifies phone numbers on validation. Use a before_save to do that!
+* ActiveModel validator no longer modifies phone numbers on validation. Use a before_save to do that!
 * configuration changes from Phonie::Phone.default_country_code to Phonie.configuration.default_country_code
 * adds Phone#possible_valid_number? and Phone#is_valid_number?
 * removes Phone#matches_full_number? Phone#matches_local_number_with_area_code? and Phone#matches_local_number?
