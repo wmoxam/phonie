@@ -77,18 +77,17 @@ You can add your own custom named formats like so:
 
 Phonie includes an ActiveModel validator. If you are using ActiveModel you can validate phone numbers like so:
 
-	class SomeModel
-	  include ActiveModel::Validations
+    class SomeModel
+      include ActiveModel::Validations
 
-	  validates :phone_number, phone: true
-	end
+      validates :phone_number, phone: true
+    end
 
-        model = SomeModel.new(phone_number: '')
-	model.valid? # false
+    model = SomeModel.new(phone_number: '')
+    model.valid? # false
 
-	model = SomeModel.new(phone_number: '+1 251 123 4567')
-	model.valid?  # true
-
+    model = SomeModel.new(phone_number: '+1 251 123 4567')
+    model.valid?  # true
 
 = TODO
 Add definitions for more countries
