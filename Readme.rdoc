@@ -64,13 +64,13 @@ When given a string, it interpolates the string with the following fields:
     pn.format("%A/%f-%l") # => "091/512-5486"
     pn.format("+ %c (%a) %n") # => "+ 385 (91) 5125486"
 
-When given a symbol it is used as a lookup for the format in the <tt>Phonie::Phone.named_formats</tt> hash.
+When given a symbol it is used as a lookup for the format in the <tt>Phonie::Formatter.named_formats</tt> hash.
     pn.format(:europe) # => "+385 (0) 91 512 5486"
     pn.format(:us) # => "(234) 123 4567"    
     pn.format(:default_with_extension) # => "+3851234567x143"
 
 You can add your own custom named formats like so:
-    Phonie::Phone.named_formats[:short] = '%A/%n1-%n2'
+    Phonie::Formatter.named_formats[:short] = '%A/%n1-%n2'
     pn.format(:short) # => 091/512-5486
 
 == ActiveModel validator
