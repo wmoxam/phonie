@@ -16,6 +16,13 @@ module Phonie
   class Formatter
     attr_reader :format, :phone_number
 
+    @named_formats = {
+      default: "+%c%a%n",
+      default_with_extension: "+%c%a%nx%x",
+      europe: '+%c (0) %a %f %l',
+      us: "(%a) %f-%l"
+    }
+
     def initialize(params)
       @phone_number = params[:phone_number]
       
@@ -31,12 +38,11 @@ module Phonie
     end
 
     def self.named_formats
-      {
-        default: "+%c%a%n",
-        default_with_extension: "+%c%a%nx%x",
-        europe: '+%c (0) %a %f %l',
-        us: "(%a) %f-%l"
-      }
+      @named_formats
+    end
+
+    def self.named_formats=(named_formats)
+      @named_formats = named_formats
     end
 
     def to_s
