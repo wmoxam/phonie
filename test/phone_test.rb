@@ -96,6 +96,12 @@ class PhoneTest < Phonie::TestCase
     assert_equal '+385 (0) 91 512 5486', pn.format(:europe)
   end
 
+  def test_format_with_custom_symbol_specifier
+    Phonie.configuration.add_custom_named_format :internal, 'ext.%x'
+    pn = Phonie::Phone.new '5125486', '91', '385', '1234'
+    assert_equal 'ext.1234', pn.format(:internal)
+  end
+
   def test_valid
     assert Phonie::Phone.valid?('915125486', :country_code => '385')
     assert Phonie::Phone.valid?('385915125486')

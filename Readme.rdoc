@@ -33,6 +33,7 @@ Alternatively Phonie can be configured via a block
     Phonie.configure do |config|
       config.default_country_code = '385'
       config.default_area_code = '47'
+      config.add_custom_named_format :short, '%A/%n1-%n2'
     end
 
     Phonie::Phone.parse '451-588'
@@ -64,13 +65,13 @@ When given a string, it interpolates the string with the following fields:
     pn.format("%A/%f-%l") # => "091/512-5486"
     pn.format("+ %c (%a) %n") # => "+ 385 (91) 5125486"
 
-When given a symbol it is used as a lookup for the format in the <tt>Phonie::Phone.named_formats</tt> hash.
+When given a symbol it is used as a lookup for the format in <tt>Phonie::Formatter</tt>.
     pn.format(:europe) # => "+385 (0) 91 512 5486"
-    pn.format(:us) # => "(234) 123 4567"    
+    pn.format(:us) # => "(234) 123 4567"
     pn.format(:default_with_extension) # => "+3851234567x143"
 
 You can add your own custom named formats like so:
-    Phonie::Phone.named_formats[:short] = '%A/%n1-%n2'
+    Phonie.configuration.add_custom_named_format :short, '%A/%n1-%n2'
     pn.format(:short) # => 091/512-5486
 
 == ActiveModel validator
@@ -95,7 +96,7 @@ Add definitions for more countries
 Currently tested on:
 [AE] UAE
 [AF] Afghanistan
-[AL] Albania 
+[AL] Albania
 [AM] Armenia
 [AR] Argentina
 [AT] Austria
@@ -186,7 +187,7 @@ Currently tested on:
 = How you can contribute
 More testing is needed to add support for missing countries, and improve support for tested countries. In many cases only minimal testing is done on area codes, local number formats and number length where more exact matching is possible.
 
-The best places to start is to read through the country tests and data/phone_countries.rb 
+The best places to start is to read through the country tests and data/phone_countries.rb
 
 = Other libraries
 This is based off a fork of the Phone gem (https://github.com/carr/phone), and was extensively modified for better support of country detection, and supports far more countries.
