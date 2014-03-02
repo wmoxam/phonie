@@ -18,7 +18,7 @@ module Phonie
 
     def initialize(params)
       @phone_number = params[:phone_number]
-      
+
       format = params[:format]
       @format = if format.respond_to?(:gsub)
         format
@@ -31,12 +31,7 @@ module Phonie
     end
 
     def self.named_formats
-      {
-        default: "+%c%a%n",
-        default_with_extension: "+%c%a%nx%x",
-        europe: '+%c (0) %a %f %l',
-        us: "(%a) %f-%l"
-      }
+      default_named_formats.merge(Phonie.configuration.custom_named_formats)
     end
 
     def to_s
@@ -49,6 +44,17 @@ module Phonie
         gsub("%f", pn.number1.to_s).
         gsub("%l", pn.number2.to_s).
         gsub("%x", pn.extension.to_s)
+    end
+
+    private
+
+    def self.default_named_formats
+      {
+        default: "+%c%a%n",
+        default_with_extension: "+%c%a%nx%x",
+        europe: '+%c (0) %a %f %l',
+        us: "(%a) %f-%l"
+      }
     end
   end
 end
