@@ -1,3 +1,8 @@
+3.1.0
+=====
+
+* Re-introduces ability to add custom named formats. Thanks dlindahl!
+
 3.0.0
 =====
 
