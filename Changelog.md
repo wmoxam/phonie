@@ -1,3 +1,8 @@
+3.1.1
+=====
+
+* Adds French error message (thanks cedric!)
+
 3.1.0
 =====
 
