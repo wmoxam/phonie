@@ -1,8 +1,8 @@
-= Phone
+= Phonie
 Parsing, validating and creating phone numbers
 
 == Install
-You can install the phone library as a gem
+You can install the phonie library as a gem
     gem install phonie
 
 == Initializing
