@@ -13,4 +13,3 @@ class ESTest < Phonie::TestCase
     parse_test('+34635399976', '34', '6', '35399976', 'Spain', true)
   end
 end
-
