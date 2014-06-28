@@ -1387,6 +1387,10 @@
   :iso_3166_code: ME
   :name: Montenegro
   :international_dialing_prefix: '00'
+  :number_format: '\d{11}'
+  :area_code: '20|3[0123]|4[01]|5[012]|6'
+  :local_number_format: '\d{6,7}'
+  :mobile_format: '6\d{7}'
 -
   :country_code: '976'
   :national_dialing_prefix: '0'

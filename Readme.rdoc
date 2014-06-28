@@ -155,6 +155,7 @@ Currently tested on:
 [LU] Luxembourg
 [LV] Latvia
 [MA] Morocco
+[ME] Montenegro
 [MT] Malta
 [MX] Mexico
 [NG] Nigeria
