@@ -1,3 +1,8 @@
+3.1.2
+=====
+
+* Adds support for Montenegro
+
 3.1.1
 =====
 
