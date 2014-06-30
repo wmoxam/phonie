@@ -183,9 +183,9 @@
   :iso_3166_code: BR
   :name: Brazil
   :international_dialing_prefix: '00'
-  :area_code: \d{2}
+  :area_code: '[1-9][1-9]'
   :local_number_format: \d{7,9}
-  :mobile_format: 11[6789]\d{7}
+  :mobile_format: '((1[1-9]|21|22|24|27|28)[6789]\d{8})|((23|2[5-9]|[3-9][1-9])[6789]\d{7})'
   :number_format: \d{10,11}
 -
   :country_code: '253'
