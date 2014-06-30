@@ -184,9 +184,9 @@
   :name: Brazil
   :international_dialing_prefix: '00'
   :area_code: \d{2}
-  :local_number_format: \d{7,8}
+  :local_number_format: \d{7,9}
   :mobile_format: 11[6789]\d{7}
-  :number_format: \d{10}
+  :number_format: \d{10,11}
 -
   :country_code: '253'
   :national_dialing_prefix: None
