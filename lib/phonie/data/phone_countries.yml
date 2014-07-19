@@ -913,6 +913,10 @@
   :char_2_code: None
   :iso_3166_code: SG
   :name: Singapore
+  :area_code: 3|6|8|9
+  :number_format: \d{8}
+  :mobile_format: (8|9)\d{7}
+  :local_number_format: \d{7}
   :international_dialing_prefix: '000'
 -
   :country_code: '290'
