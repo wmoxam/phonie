@@ -1,3 +1,13 @@
+3.1.4
+=====
+
+* Adds support for Singapore
+
+3.1.3
+=====
+
+* Improves support for Brazil
+
 3.1.2
 =====
 

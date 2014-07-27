@@ -172,6 +172,7 @@ Currently tested on:
 [RU] Russian Federation
 [SA] Saudi Arabia
 [SE] Sweden
+[SG] Singapore
 [SI] Slovenia
 [SK] Slovakia
 [SN] Senegal
