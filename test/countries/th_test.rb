@@ -8,6 +8,7 @@ class THTest < Phonie::TestCase
   end
 
   def test_mobile
+    parse_test('+66940734567', '66', '94',  '0734567', 'Thailand', true)
     parse_test('+6687342563',  '66', '87',  '342563', 'Thailand', true)
   end
 end

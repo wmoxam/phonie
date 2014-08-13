@@ -1045,8 +1045,8 @@
   :international_dialing_prefix: '001'
   :area_code: '(2|[3-9]\d)'
   :local_number_format: '\d{6,7}'
-  :number_format: '\d{8}'
-  :mobile_format: '([6,8,9][0-9])\d{6}'
+  :number_format: '\d{8,9}'
+  :mobile_format: '[6,8,9]\d{7,8}'
 -
   :country_code: '886'
   :national_dialing_prefix: None
