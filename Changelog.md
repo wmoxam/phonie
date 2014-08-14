@@ -1,3 +1,9 @@
+3.1.5
+=====
+
+* Adds support for Hong Kong
+* Fixes mobile parsing for Thailand
+
 3.1.4
 =====
 
