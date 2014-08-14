@@ -138,6 +138,7 @@ Currently tested on:
 [GT] Guatemala
 [GU] Guam
 [GY] Guyana
+[HK] Hong Kong
 [HR] Croatia
 [HU] Hungary
 [IE] Ireland
