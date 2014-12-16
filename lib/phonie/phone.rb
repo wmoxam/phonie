@@ -123,7 +123,7 @@ module Phonie
 
     def normalize_args(args)
       hash = if args.first.respond_to?(:key?)
-	args.first
+        args.first
       else
         {}.tap do |h|
           h[:number] =       args[0] if args.length > 0
@@ -131,7 +131,7 @@ module Phonie
           h[:country_code] = args[2] if args.length > 2
           h[:extension] =    args[3] if args.length > 3
           h[:country] =      args[4] if args.length > 4
-	end
+        end
       end
 
       defaults.merge(hash)
@@ -139,7 +139,7 @@ module Phonie
 
     def validate
       [:country_code, :area_code, :number].each do |field|
-	errors[field] = ["can't be blank"] if send(field).to_s == ''
+        errors[field] = ["can't be blank"] if send(field).to_s == ''
       end
     end
 

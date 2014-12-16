@@ -6,7 +6,7 @@ module Phonie
     extend Forwardable
 
     attr_reader :name, :country_code, :char_2_code, :iso_3166_code, :parser
-    
+
     def initialize(params)
       @name          = params[:name]
       @country_code  = params[:country_code]
@@ -17,12 +17,12 @@ module Phonie
     end
 
     def_delegators :parser, :is_mobile?, :possible_valid_number?,
-	                    :is_valid_number?, :parse
+                   :is_valid_number?, :parse
 
     def self.all
       @@all ||= begin
         YAML.load_file(Phonie.configuration.data_file_path).collect do |country_params|
-	  Country.new(country_params)
+          Country.new(country_params)
         end.select {|country| country.valid? }
       end
     end
