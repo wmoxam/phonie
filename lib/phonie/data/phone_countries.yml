@@ -1189,7 +1189,7 @@
   :char_2_code: '0'
   :iso_3166_code: IL
   :name: Israel
-  :international_dialing_prefix: '00'
+  :international_dialing_prefix: '00|012|013|014|015|018|019'
   :area_code: '[2-46-9]|5\d'
   :local_number_format: \d{7}
   :mobile_format: 5\d{8}
