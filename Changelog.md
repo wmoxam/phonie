@@ -1,3 +1,9 @@
+3.1.6
+=====
+
+* Adds a correct international dialing prefix for Israel
+* Some minor code cleanups
+
 3.1.5
 =====
 
