@@ -178,7 +178,7 @@
   :international_dialing_prefix: '00'
 -
   :country_code: '55'
-  :national_dialing_prefix: '14'
+  :national_dialing_prefix: '0'
   :char_2_code: '14'
   :iso_3166_code: BR
   :name: Brazil
