@@ -21,7 +21,7 @@ def parse_test(raw, country_code, area_code, number, country_name = nil, is_mobi
 end
 
 def parse_failure(raw)
-  pn = Phonie::Phone.parse!(raw)
+  pn = Phonie::Phone.parse(raw)
   assert_equal pn, nil
 end
 
