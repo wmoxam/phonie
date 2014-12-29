@@ -1,22 +1,23 @@
 require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 
 ## Brazil
+# http://www.wisetel.com.br/acoes_de_regulacao/normas/n_96_28.htm
 class BRTest < Phonie::TestCase
 
   def test_local
-    parse_test('+55 91 12345678', '55', '91', '12345678', 'Brazil', false)
+    parse_test('+55 91 22345678', '55', '91', '22345678', 'Brazil', false)
   end
 
   def test_sao_paulo
-    parse_test('+55 11 12345678', '55', '11', '12345678', 'Brazil', false)
+    parse_test('+55 11 22345678', '55', '11', '22345678', 'Brazil', false)
   end
 
   def test_minas_gerais
-    parse_test('+55 35 12345678', '55', '35', '12345678', 'Brazil', false)
+    parse_test('+55 35 22345678', '55', '35', '22345678', 'Brazil', false)
   end
 
   def test_area_with_zero
-    parse_test('+55 35 12345678', '55', '35', '12345678', 'Brazil', false)
+    parse_test('+55 035 22345678', '55', '35', '22345678', 'Brazil', false)
   end
 
   def test_area_max
@@ -55,7 +56,7 @@ class BRTest < Phonie::TestCase
   end
 
   def test_only_mobile_has_11_digits
-    parse_failure('+5591123456789') # only mobile numebrs can be 11 digits
+    parse_failure('+5591223456789') # only mobile numebrs can be 11 digits
   end
 
   #
