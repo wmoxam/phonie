@@ -16,10 +16,6 @@ class BRTest < Phonie::TestCase
     parse_test('+55 35 22345678', '55', '35', '22345678', 'Brazil', false)
   end
 
-  def test_area_with_zero
-    parse_test('+55 035 22345678', '55', '35', '22345678', 'Brazil', false)
-  end
-
   def test_area_max
     parse_test('+55 98 59995678', '55', '98', '59995678', 'Brazil', false)
   end
