@@ -1,3 +1,8 @@
+3.1.7
+=====
+
+* Fixes Brazilian number parsing (Thanks nofxx!)
+
 3.1.6
 =====
 
