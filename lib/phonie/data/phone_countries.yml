@@ -178,14 +178,14 @@
   :international_dialing_prefix: '00'
 -
   :country_code: '55'
-  :national_dialing_prefix: '14'
-  :char_2_code: '14'
+  :national_dialing_prefix: '0'
+  :international_dialing_prefix: '00'
+  :char_2_code: '55'
   :iso_3166_code: BR
   :name: Brazil
-  :international_dialing_prefix: '00'
-  :area_code: '[1-9][1-9]'
-  :local_number_format: \d{7,9}
-  :mobile_format: '((1[1-9]|21|22|24|27|28)[6789]\d{8})|((23|2[5-9]|[3-9][1-9])[6789]\d{7})'
+  :area_code: ((1[1-9]|2[147]|3[1-578]|4[1-9]|5[1-5]|6[1235-9]|7[134579]|8[1-8]|9[12568])|0[3589]00)
+  :local_number_format: ([2-5]\d{7}|9?[6-9]\d{7}|\d{7})
+  :mobile_format: ([129][1-9]9|[3-9][1-9])[6-9]\d{7}
   :number_format: \d{10,11}
 -
   :country_code: '253'

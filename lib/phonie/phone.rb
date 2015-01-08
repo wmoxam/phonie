@@ -118,7 +118,7 @@ module Phonie
 
     def defaults
       { area_code:    Phonie.configuration.default_area_code,
-	country_code: Phonie.configuration.default_country_code }
+        country_code: Phonie.configuration.default_country_code }
     end
 
     def normalize_args(args)
