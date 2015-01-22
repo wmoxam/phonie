@@ -259,4 +259,8 @@ class GBTest < Phonie::TestCase
     parse_test('+44 873 1570123', '44', '873', '1570123')
   end
 
+  def test_personal
+    parse_test('+44 70 0585 0070', '44', '70', '05850070', 'United Kingdom', false)
+  end
+
 end
