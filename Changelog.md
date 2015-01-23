@@ -1,3 +1,8 @@
+3.1.8
+=====
+
+* Remove personal numbers from GB mobile regexp. (Thanks peteryates!)
+
 3.1.7
 =====
 
