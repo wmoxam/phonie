@@ -1490,7 +1490,7 @@
   :international_dialing_prefix: '00'
   :area_code: 2[03489]|11[3-8]|1[2-69]1|1(3873|5(242|39[456])|697[347]|768[347]|9467)|1[2-9]\d{2}|3[0347]\d|500|5[56]|70|7([45789]\d{2}|624)|8(0[08]|4[2-5]|7[0-3])|9[018]\d
   :local_number_format: \d{4,8}
-  :mobile_format: 7\d{9}
+  :mobile_format: '7[1-9]\d{8}'
   :number_format: \d{9,10}
 -
   :country_code: '242'
