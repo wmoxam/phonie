@@ -1,3 +1,8 @@
+3.1.9
+=====
+
+* Adds support for Trinidad and Tobago
+
 3.1.8
 =====
 

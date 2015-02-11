@@ -179,6 +179,7 @@ Currently tested on:
 [SN] Senegal
 [SV] El Salvador
 [TO] Tonga
+[TT] Trinidad and Tobago
 [TW] Taiwan
 [UA] Ukraine
 [US] United States
