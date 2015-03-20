@@ -1,7 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 
 ## Brazil
-# http://www.wisetel.com.br/acoes_de_regulacao/normas/n_96_28.htm
+# http://legislacao.anatel.gov.br/resolucoes/2001/383-resolucao-263
 class BRTest < Phonie::TestCase
 
   def test_local
