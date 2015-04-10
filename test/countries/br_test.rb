@@ -1,7 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 
 ## Brazil
-# http://www.wisetel.com.br/acoes_de_regulacao/normas/n_96_28.htm
+# http://legislacao.anatel.gov.br/resolucoes/2001/383-resolucao-263
 class BRTest < Phonie::TestCase
 
   def test_local
@@ -17,11 +17,7 @@ class BRTest < Phonie::TestCase
   end
 
   def test_area_max
-    parse_test('+55 98 59995678', '55', '98', '59995678', 'Brazil', false)
-  end
-
-  def test_area_max_fail
-    parse_failure('+55 99 59995678')
+    parse_test('+55 99 59995678', '55', '99', '59995678', 'Brazil', false)
   end
 
   def test_paid_toll
@@ -84,5 +80,9 @@ class BRTest < Phonie::TestCase
 
   def test_mobile_area_21_with_9
     parse_test('55 21 98765 5678', '55', '21', '987655678', 'Brazil', true)
+  end
+
+  def test_mobile_area_22_with_9
+    parse_test('55 22 98765 5678', '55', '22', '987655678', 'Brazil', true)
   end
 end
