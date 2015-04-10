@@ -1,3 +1,8 @@
+3.1.10
+======
+
+* Adds new BR area codes (Thanks @lunks!)
+
 3.1.9
 =====
 
