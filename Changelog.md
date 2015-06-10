@@ -1,3 +1,8 @@
+3.1.11
+======
+
+* Improves new AE area code support (Thanks @ivalkeen!)
+
 3.1.10
 ======
 
