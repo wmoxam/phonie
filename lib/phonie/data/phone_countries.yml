@@ -1145,7 +1145,7 @@
   :iso_3166_code: AE
   :name: United Arab Emirates
   :international_dialing_prefix: '00'
-  :area_code: 2|3|6|9|48|5[0568]|7[07]|88|4|7
+  :area_code: 2|3|6|9|48|5[02568]|7[07]|88|4|7
   :local_number_format: \d{7}
   :mobile_format: (50|55|56)\d{7}
   :number_format: \d{8,9}
