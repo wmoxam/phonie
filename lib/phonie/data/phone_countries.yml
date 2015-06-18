@@ -714,6 +714,9 @@
   :iso_3166_code: ID
   :name: Indonesia
   :international_dialing_prefix: '001'
+  :area_code: 8\d\d
+  :number_format: 8\d{8,10}
+  :local_number_format: \d{6,8}
 -
   :country_code: '260'
   :national_dialing_prefix: '0'
