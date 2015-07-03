@@ -1,3 +1,8 @@
+3.1.12
+======
+
+* Adds support for ID numbers (mobile only). Thanks @ivalkeen 
+
 3.1.11
 ======
 

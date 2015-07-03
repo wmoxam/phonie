@@ -141,6 +141,7 @@ Currently tested on:
 [HK] Hong Kong
 [HR] Croatia
 [HU] Hungary
+[ID] Indonesia
 [IE] Ireland
 [IL] Israel
 [IN] India
