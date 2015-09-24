@@ -562,6 +562,8 @@
   :iso_3166_code: MY
   :name: Malaysia
   :international_dialing_prefix: '00'
+  :mobile_format: [0]?1\d{1}\d{7,8}
+  :number_format: [0]?[2,3,4,5,6,7,8,9]\d{1,2}\d{6,8}
 -
   :country_code: '966'
   :national_dialing_prefix: '0'
