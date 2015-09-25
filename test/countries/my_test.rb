@@ -8,6 +8,7 @@ class MYTest < Phonie::TestCase
 
   def test_mobile
     parse_test('+60196681162', '60', '19', '6681162', 'Malaysia', true)
+    parse_test('+601118788037', '60', '11', '18788037', 'Malaysia', true)
   end
 
 end
