@@ -160,6 +160,7 @@ Currently tested on:
 [ME] Montenegro
 [MT] Malta
 [MX] Mexico
+[MY] Malaysia
 [NG] Nigeria
 [NI] Nicaragua
 [NL] Netherlands

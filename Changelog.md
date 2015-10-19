@@ -1,3 +1,9 @@
+3.1.13
+======
+
+* Adds support for MY. (Thanks @dramalho!)
+* Add 07341 numbers to UK (Thanks @ijpiantanida!)
+
 3.1.12
 ======
 
