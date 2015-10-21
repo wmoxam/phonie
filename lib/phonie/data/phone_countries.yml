@@ -1534,9 +1534,9 @@
   :iso_3166_code: CY
   :name: Cyprus
   :international_dialing_prefix: '00'
-  :area_code: 2\d|99
+  :area_code: 2\d|9(9|7|6|5)
   :local_number_format: \d{6}
-  :mobile_format: 99\d{6}
+  :mobile_format: 9(9|7|6|5)\d{6}
   :number_format: \d{8}
 -
   :country_code: '45'
