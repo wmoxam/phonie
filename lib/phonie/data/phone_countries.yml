@@ -352,6 +352,10 @@
   :char_2_code: '0'
   :iso_3166_code: UG
   :name: Uganda
+  :area_code: '4\d{1,2}|7\d{1}|9\d{2}'
+  :number_format: '\d{9}'
+  :local_number_format: '\d{6,7}'
+  :mobile_format: '(70|71|75|77|78|90)\d{7}'
   :international_dialing_prefix: '00'
 -
   :country_code: '228'
