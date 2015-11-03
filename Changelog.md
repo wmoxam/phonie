@@ -1,3 +1,9 @@
+3.1.14
+======
+
+* Adds support for FJ. (Thanks @dramalho)
+* Tightens up rules for CY (Thanks @dramalho)
+
 3.1.13
 ======
 
@@ -7,7 +13,7 @@
 3.1.12
 ======
 
-* Adds support for ID numbers (mobile only). Thanks @ivalkeen 
+* Adds support for ID numbers (mobile only). Thanks @ivalkeen
 
 3.1.11
 ======
