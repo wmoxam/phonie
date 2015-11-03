@@ -129,6 +129,7 @@ Currently tested on:
 [ES] Spain
 [ET] Ethiopia
 [FI] Finland
+[FJ] Fiji
 [FR] France
 [GB] United Kingdom
 [GE] Georgia
