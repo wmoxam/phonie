@@ -115,7 +115,7 @@ class SETest < Phonie::TestCase
     parse_test('+46635555555', '46', '63', '5555555', "Sweden", false)
   end
 
-  # 070, 
+  # 070,
   def test_mobile_70
     parse_test('+46705555555', '46', '70', '5555555', "Sweden", true)
   end
@@ -125,12 +125,12 @@ class SETest < Phonie::TestCase
     parse_test('+46715555555', '46', '71', '5555555')
   end
 
-  # 072, 
+  # 072,
   def test_mobile_72
     parse_test('+46725555555', '46', '72', '5555555')
   end
 
-  # 073, 
+  # 073,
   def test_mobile_73
     parse_test('+46735555555', '46', '73', '5555555')
   end
@@ -138,6 +138,11 @@ class SETest < Phonie::TestCase
   # 076  Mobile networks
   def test_mobile_76
     parse_test('+46765555555', '46', '76', '5555555')
+  end
+
+  # 079,
+  def test_mobile_79
+    parse_test('+46795555555', '46', '79', '5555555')
   end
 
   # 090 Umeå
@@ -450,7 +455,7 @@ class SETest < Phonie::TestCase
   def test_vannas
     parse_test('+469355555555', '46', '935', '5555555')
   end
-  # 0939  Premium rate calls 
+  # 0939  Premium rate calls
   # 0940  Vilhelmina
   # 0941  Åsele
   # 0942  Dorotea
