@@ -1,3 +1,8 @@
+3.1.15
+======
+
+* Updates Swedish mobile area codes (Thanks @joenas!)
+
 3.1.14
 ======
 
