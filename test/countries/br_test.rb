@@ -55,15 +55,15 @@ class BRTest < Phonie::TestCase
   # Mobile
   #
   def test_mobile
-    parse_test('+55 91 9786 5678', '55', "91", '97865678', 'Brazil', true)
+    parse_test('+55 91 97866 5678', '55', "91", '978665678', 'Brazil', true)
   end
 
   def test_mobile_low_range
-    parse_test('55 35 6101 4567', '55', '35', '61014567', 'Brazil', true)
+    parse_test('55 41 7101 4567', '55', '41', '71014567', 'Brazil', true)
   end
 
   def test_mobile_high_range
-    parse_test('55 35 9991 4567', '55', '35', '99914567', 'Brazil', true)
+    parse_test('55 35 99910 4567', '55', '35', '999104567', 'Brazil', true)
   end
 
   def test_mobile_area_11_with_9
