@@ -1,3 +1,9 @@
+3.2.1
+=====
+
+* Adds support for Uganda (Thanks @dramalho)
+* Adds tests for new mobile validator
+
 3.2.0
 =====
 

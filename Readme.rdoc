@@ -189,6 +189,7 @@ Currently tested on:
 [TT] Trinidad and Tobago
 [TW] Taiwan
 [UA] Ukraine
+[UG] Uganda
 [US] United States
 [UY] Uruguay
 [VN] Vietnam
