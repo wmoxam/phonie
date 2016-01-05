@@ -2,6 +2,8 @@ require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 require 'active_model'
 require 'phonie/railties/validator'
 
+I18n.enforce_available_locales = false
+
 class SomeModel < Struct.new(:phone_number)
   include ActiveModel::Validations
   validates :phone_number, phone: true
@@ -10,6 +12,11 @@ end
 class SomeOtherModel < Struct.new(:phone_number)
   include ActiveModel::Validations
   validates :phone_number, phone: true, allow_blank: true
+end
+
+class SomeMobileModel < Struct.new(:mobile_number)
+  include ActiveModel::Validations
+  validates :mobile_number, mobile_phone: true, allow_blank: true
 end
 
 class PhoneValidatorTest < Phonie::TestCase
@@ -35,5 +42,13 @@ class PhoneValidatorTest < Phonie::TestCase
     assert model.invalid?
 
     assert !model.errors[:phone_number].empty?
+  end
+
+  def test_mobile_validator
+    valid = SomeMobileModel.new('+886952475345')
+    invalid = SomeMobileModel.new('+886423194678')
+
+    assert valid.valid?
+    assert invalid.invalid?
   end
 end
