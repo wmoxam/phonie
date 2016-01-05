@@ -1,3 +1,10 @@
+3.2.0
+=====
+
+* Improves BR mobile detection (Thanks @mfbmina)
+* Adds an new validator for mobile numbers (Thanks @mfbmina)
+* Adds a pt-BR locale for error messages (Thanks @mfbmina)
+
 3.1.15
 ======
 

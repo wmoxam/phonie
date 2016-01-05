@@ -90,6 +90,10 @@ Phonie includes an ActiveModel validator. If you are using ActiveModel you can v
     model = SomeModel.new(phone_number: '+1 251 123 4567')
     model.valid?  # true
 
+Similarly you can validate if a number is a mobile number via:
+
+    validates :mobile_number, mobile_phone: true
+
 = TODO
 Add definitions for more countries
 
