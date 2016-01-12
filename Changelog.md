@@ -1,3 +1,8 @@
+3.2.2
+=====
+
+* Adds support for Cuba (Thanks @dramalho)
+
 3.2.1
 =====
 

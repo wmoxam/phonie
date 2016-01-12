@@ -122,6 +122,7 @@ Currently tested on:
 [CH] Switzerland
 [CN] China
 [CR] Costa Rica
+[CU] Cuba
 [CY] Cyprus
 [CZ] Czech Republic
 [DE] Germany

@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 
-## Fiji
+## Cuba
 class CUTest < Phonie::TestCase
   def test_local
     parse_test('+5378346100',  '53', '7',  '8346100', 'Cuba', false)
