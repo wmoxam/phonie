@@ -632,10 +632,10 @@
   :iso_3166_code: EE
   :name: Estonia
   :international_dialing_prefix: '00'
-  :area_code: \d
+  :area_code: (5|81|82|83|[1-46-9])
   :local_number_format: \d{6,7}
-  :mobile_format: 5\d{7}
-  :number_format: 5\d{7}|[1-46-9]\d{6}
+  :mobile_format: (5|81|82|83)\d{6,7}
+  :number_format: (5|81|82|83)\d{6,7}|[1-46-9]\d{6,7}
 -
   :country_code: '61'
   :national_dialing_prefix: '0'
