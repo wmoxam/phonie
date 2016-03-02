@@ -958,8 +958,12 @@
   :national_dialing_prefix: None
   :char_2_code: None
   :iso_3166_code: RE
-  :name: RÃ©union
+  :name: Reunion
   :international_dialing_prefix: '00'
+  :area_code: 269|262|692|693|639
+  :local_number_format: \d{6}
+  :mobile_format: (692|693|639)\d{6}
+  :number_format: \d{9,10}
 -
   :country_code: '234'
   :national_dialing_prefix: '0'
