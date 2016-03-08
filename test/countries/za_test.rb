@@ -10,7 +10,6 @@ class ZATest < Phonie::TestCase
   def test_mobile
     # Vodacom
     parse_test('+27 82 555 5555', '27', '82', '5555555', "South Africa", true)
-    parse_test('+27 61 555 5555', '27', '61', '5555555', "South Africa", true)
   end
 
   def test_tollfree
