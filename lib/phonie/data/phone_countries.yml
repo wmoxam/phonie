@@ -165,9 +165,9 @@
   :iso_3166_code: ZA
   :name: South Africa
   :international_dialing_prefix: '00'
-  :area_code: 800|86[01]|[1-57-8]\d
+  :area_code: 800|86[01]|[1-8]\d
   :local_number_format: \d{6,7}
-  :mobile_format: 7\d{8}|8[1-9]\d{7}
+  :mobile_format: (6|7)\d{8}|8[1-9]\d{7}
   :number_format: \d{9}
 -
   :country_code: '508'
