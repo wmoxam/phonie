@@ -1916,3 +1916,14 @@
   :area_code: 787|939
   :local_number_format: \d{7}
   :number_format: \d{10}
+-
+  :country_code: '1'
+  :national_dialing_prefix: '1'
+  :char_2_code: '1'
+  :iso_3166_code: BB
+  :name: Barbados
+  :international_dialing_prefix: '1'
+  :area_code: 885|999|246
+  :local_number_format: \d{7}
+  :number_format: \d{10}
+
