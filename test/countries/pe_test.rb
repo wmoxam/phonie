@@ -9,5 +9,7 @@ class PETest < Phonie::TestCase
 
   def test_mobile
     parse_test('+5192345678', '51', '9', '2345678', 'Peru', true)
+    parse_test('+51923456789', '51', '9', '23456789', 'Peru', true)
+
   end
 end

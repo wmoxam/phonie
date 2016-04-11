@@ -1782,9 +1782,9 @@
   :name: Peru
   :international_dialing_prefix: '00'
   :area_code: '1|9|41|43|83|54|66|76|84|67|62|56|64|44|74|65|82|53|63|73|51|42|52|72|61'
-  :local_number_format: \d{6,7}
-  :mobile_format: '[9]\d{7}'
-  :number_format: \d{8,9}
+  :local_number_format: '\d{6,8}'
+  :mobile_format: '[9]\d{7,8}'
+  :number_format: \d{7,9}
 -
   :country_code: '52'
   :national_dialing_prefix: '1'
