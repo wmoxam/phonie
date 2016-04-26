@@ -160,7 +160,7 @@ class GBTest < Phonie::TestCase
   # Mobile                  07700 900000 to 900999
   def test_mobile
     parse_test('+44 7700 900345', '44', '7700', '900345', "United Kingdom", true)
-    parse_test('+44 7399 199191', '44', '7399', '199191', "United Kingdom", true)
+    parse_test('+44 7399 123456', '44', '7399', '123456', "United Kingdom", true)
   end
 
 
