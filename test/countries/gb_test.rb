@@ -2,7 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 
 # http://stakeholders.ofcom.org.uk/telecoms/numbering/guidance-tele-no/numbers-for-drama
 #
-# Geographic Area     Geographic Area Code  Telephone Number Range 
+# Geographic Area     Geographic Area Code  Telephone Number Range
 # (1000 numbers in each range)
 # Leeds               0113                  496 0000 to 496 0999
 # Sheffield           0114                  496 0000 to 496 0999
@@ -24,7 +24,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 #
 # Other Telephone Numbers
 #
-# Telephone Number Type   Telephone Number Range 
+# Telephone Number Type   Telephone Number Range
 # (1000 numbers in each range)
 # Mobile                  07700 900000 to 900999
 # Freephone               08081 570000 to 570999
@@ -160,7 +160,9 @@ class GBTest < Phonie::TestCase
   # Mobile                  07700 900000 to 900999
   def test_mobile
     parse_test('+44 7700 900345', '44', '7700', '900345', "United Kingdom", true)
+    parse_test('+44 7399 123456', '44', '7399', '123456', "United Kingdom", true)
   end
+
 
   def test_mobile_2
     parse_test('+44 7778 900345', '44', '7778', '900345')
@@ -190,7 +192,7 @@ class GBTest < Phonie::TestCase
   end
 
   # Tests for additional number ranges not previously mentioned
-  
+
   def test_four_plus_five_1
     parse_test('+44 1204 62532', '44', '1204', '62532')
   end
