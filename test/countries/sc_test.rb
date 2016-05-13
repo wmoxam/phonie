@@ -7,7 +7,7 @@ class SCTest < Phonie::TestCase
   end
 
   def test_mobile
-    parse_test('+2482729609', '248', '2', '729609', 'Seychelles', true)
+    parse_test('+24825255813', '248', '2', '5255813', 'Seychelles', true)
   end
 
 end
