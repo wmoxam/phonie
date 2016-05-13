@@ -340,6 +340,10 @@
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: VE
+  :area_code: '(2|4)\d{2}'
+  :mobile_format: '4\d{9}'
+  :number_format: '\d{10}'
+  :local_number_format: '\d{7}'
   :name: Venezuela, Bolivarian Republic of
   :international_dialing_prefix: '00'
 -
