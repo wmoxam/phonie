@@ -3,9 +3,9 @@ require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 ## Mexico
 class MXTest < Phonie::TestCase
   def test_local
-    parse_test('+52 33 36159895',  '52', '33',  '36159895', 'Mexico', false)
-    parse_test('+52 686 3615989',  '52', '686',  '3615989', 'Mexico', false)
-    parse_test('+52 482 1234567','52','482','1234567','Mexico',false)
+    parse_test('+52 33 36159895', '52', '33',  '36159895','Mexico', false)
+    parse_test('+52 686 3615989', '52', '686', '3615989', 'Mexico', false)
+    parse_test('+52 482 1234567', '52', '482', '1234567', 'Mexico', false)
   end
 
   def test_mobile
