@@ -298,6 +298,10 @@
   :national_dialing_prefix: '0'
   :char_2_code: '0'
   :iso_3166_code: TZ
+  :area_code: '2\d{1}|41|6\d{1}|7\d{1}'
+  :mobile_format: '(6|7)\d{8}'
+  :number_format: '\d{9}'
+  :local_number_format: '\d{7}'
   :name: Tanzania, United Republic of
   :international_dialing_prefix: '00'
 -
