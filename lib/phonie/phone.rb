@@ -38,6 +38,8 @@ module Phonie
     def self.parse(string, options = {})
       return if string.nil?
 
+      string = string.to_s
+
       options[:country_code] ||= Phonie.configuration.default_country_code
       options[:area_code]    ||= Phonie.configuration.default_area_code
 
