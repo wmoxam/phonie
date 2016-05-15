@@ -43,7 +43,8 @@ module Phonie
         gsub("%n", pn.number.to_s).
         gsub("%f", pn.number1.to_s).
         gsub("%l", pn.number2.to_s).
-        gsub("%x", pn.extension.to_s)
+        gsub("%x", pn.extension.to_s).
+        gsub("%X", pn.extension_with_prefix.to_s)
     end
 
     private

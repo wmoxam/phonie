@@ -84,6 +84,11 @@ module Phonie
       number[-n2_length, n2_length]
     end
 
+    def extension_with_prefix
+      return unless extension
+      [' x', extension ].join
+    end
+
     def format(fmt)
       Formatter.new(format: fmt, phone_number: self).to_s
     end
