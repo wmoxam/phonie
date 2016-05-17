@@ -38,6 +38,8 @@ module Phonie
     def self.parse(string, options = {})
       return if string.nil?
 
+      string = string.to_s
+
       options[:country_code] ||= Phonie.configuration.default_country_code
       options[:area_code]    ||= Phonie.configuration.default_area_code
 
@@ -82,6 +84,11 @@ module Phonie
     def number2
       n2_length = number.size - Phonie.configuration.n1_length
       number[-n2_length, n2_length]
+    end
+
+    def extension_with_prefix
+      return unless extension
+      [' x', extension ].join
     end
 
     def format(fmt)
