@@ -121,6 +121,10 @@
   :char_2_code: None
   :iso_3166_code: PA
   :name: Panama
+  :area_code: '2|4|6|7|9'
+  :mobile_format: '6\d{7}'
+  :number_format: '\d{7,8}'
+  :local_number_format: '\d{6,7}'
   :international_dialing_prefix: '00'
 -
   :country_code: '591'
