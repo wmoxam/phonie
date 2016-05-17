@@ -1,3 +1,18 @@
+3.3.1
+=====
+
+* Adds support for multiple countries (Thanks @dramalho):
+  * Jordan
+  * Seychelles
+  * Panama
+  * Venezuela
+  * Guadeloupe
+  * Mali
+  * Tanzania
+  * Jamaica
+
+* Adds new formatter option for extensions with prefix: %X (Thanks @feldpost)
+
 3.2.2
 =====
 

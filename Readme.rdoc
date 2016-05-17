@@ -59,6 +59,7 @@ When given a string, it interpolates the string with the following fields:
 * %f - first @@n1_length characters of number (configured through Phonie.n1_length), default is 3 (512)
 * %l - last characters of number (5486)
 * %x - the extension number
+* %X - the extension number with prefix
 
     pn = Phonie::Phone.parse('+385915125486')
     pn.to_s # => "+385915125486"
@@ -140,6 +141,7 @@ Currently tested on:
 [GE] Georgia
 [GF] French Guiana
 [GH] Ghana
+[GP] Guadeloupe
 [GR] Greece
 [GT] Guatemala
 [GU] Guam
@@ -154,6 +156,8 @@ Currently tested on:
 [IQ] Iraq
 [IR] Iran
 [IT] Italy
+[JM] Jamaica
+[JO] Jordan
 [JP] Japan
 [KE] Kenya
 [KR] South Korea
@@ -164,6 +168,7 @@ Currently tested on:
 [LV] Latvia
 [MA] Morocco
 [ME] Montenegro
+[ML] Mali
 [MT] Malta
 [MX] Mexico
 [MY] Malaysia
@@ -173,6 +178,7 @@ Currently tested on:
 [NO] Norway
 [NP] Nepal
 [NZ] New Zealand
+[PA] Panama
 [PH] Philippines
 [PK] Pakistan
 [PT] Portugal
@@ -180,6 +186,7 @@ Currently tested on:
 [RS] Serbia
 [RU] Russian Federation
 [SA] Saudi Arabia
+[SC] Seychelles
 [SE] Sweden
 [SG] Singapore
 [SI] Slovenia
@@ -189,10 +196,12 @@ Currently tested on:
 [TO] Tonga
 [TT] Trinidad and Tobago
 [TW] Taiwan
+[TZ] Tanzania
 [UA] Ukraine
 [UG] Uganda
 [US] United States
 [UY] Uruguay
+[VE] Venezuela
 [VN] Vietnam
 [ZA] South Africa
 [ZW] Zimbabwe

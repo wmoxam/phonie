@@ -1,3 +1,3 @@
 module Phonie
-  VERSION = '3.2.2'
+  VERSION = '3.3.1'
 end
