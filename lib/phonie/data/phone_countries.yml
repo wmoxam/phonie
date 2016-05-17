@@ -55,6 +55,17 @@
   :name: Guadeloupe
   :international_dialing_prefix: '00'
 -
+  :country_code: '1'
+  :national_dialing_prefix: '0'
+  :char_2_code: '0'
+  :iso_3166_code: JM
+  :name: Jamaica
+  :area_code: '876'
+  :mobile_format: '876(2|3|4|77|781|782|783|784|787|788|789|790|791|792|793|796|797|798|799|8|909|919|990|995|997|999)\d{4,6}'
+  :number_format: '\d{7,10}'
+  :local_number_format: '\d{4,7}'
+  :international_dialing_prefix: '011'
+-
   :country_code: '81'
   :national_dialing_prefix: '0'
   :char_2_code: '0'
