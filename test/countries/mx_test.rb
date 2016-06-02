@@ -13,6 +13,7 @@ class MXTest < Phonie::TestCase
     parse_test('+52 1 55 12345678', '52', '155', '12345678', 'Mexico', true)
     parse_test('+52 1 444 1234567', '52', '1444', '1234567', 'Mexico', true)
     parse_test('+52 1 624 1234567', '52', '1624', '1234567', 'Mexico', true)
-    parse_test('+52 1 967 1005131', '52', '1967', '1005131', 'Mexico', true)
+    parse_test('+52 1 967 1234567', '52', '1967', '1234567', 'Mexico', true)
+    parse_test('+52 1 473 1234567 ', '52', '1473', '1234567', 'Mexico', true)
   end
 end
