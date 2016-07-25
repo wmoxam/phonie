@@ -7,6 +7,6 @@ class GITest < Phonie::TestCase
   end
 
   def test_mobile
-    parse_test('35054018411', '350', '54', '018411', 'Gibraltar', true)
+    parse_test('35054123456', '350', '54', '123456', 'Gibraltar', true)
   end
 end
