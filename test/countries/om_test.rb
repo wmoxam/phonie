@@ -1,7 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 
-## Morocco
-class MOTest < Phonie::TestCase
+## Oman
+class OMTest < Phonie::TestCase
   def test_local
     parse_test('+968 22123456',  '968', '22', '123456', 'Oman', false)
   end
