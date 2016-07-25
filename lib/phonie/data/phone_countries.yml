@@ -1273,6 +1273,10 @@
   :char_2_code: None
   :iso_3166_code: GI
   :name: Gibraltar
+  :area_code: (?:5[46-8]|62)|2(?:00\d|1(?:6[24-7]|9\d)|2(?:00|2[2457]))
+  :mobile_format: '(?:5[46-8]|62)\d{6}'
+  :number_format: '\d{8}'
+  :local_number_format: '\d{4,6}'
   :international_dialing_prefix: '00'
 -
   :country_code: '267'
