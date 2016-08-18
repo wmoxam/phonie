@@ -494,10 +494,10 @@
   :iso_3166_code: UY
   :name: Uruguay
   :international_dialing_prefix: '00'
-  :area_code: 2|42|4364|43[34567]|4452|44[3457]|454[24]|4567?|4586|46[234]|4675|47[237]|4779|9[13456789]
+  :area_code: 2|4[2-7]|9[1-9]
   :local_number_format: \d{6,7}
-  :mobile_format: 9\d{7}
-  :number_format: \d{8}
+  :mobile_format: 9[1-9]\d{6}
+  :number_format: \d{7,8}
 -
   :country_code: '992'
   :national_dialing_prefix: '8'
@@ -1354,8 +1354,8 @@
   :iso_3166_code: CH
   :name: Switzerland
   :international_dialing_prefix: '00'
-  :area_code: 21|22|24|26|27|31|32|33|34|41|43|44|51|52|55|56|58|61|62|71|74|76|77|78|79|81|91
-  :mobile_format: (74|76|77|78|79)\d{7}
+  :area_code: (?:2[12467]|3[1-4]|4[134]|5[256]|6[12]|[7-9]1)|7[4-9]
+  :mobile_format: 7[3-9]\d{7}
   :local_number_format: \d{7}
   :number_format: \d{9}
 -

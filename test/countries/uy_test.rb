@@ -16,5 +16,6 @@ class UYTest < Phonie::TestCase
   # 09 Mobile phones
   def test_mobile_phones
     parse_test('+598 99 570110', '598', '99', '570110', "Uruguay", true)
+    parse_test('+598 92 523008', '598', '92', '523008', "Uruguay", true)
   end
 end
