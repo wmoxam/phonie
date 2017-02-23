@@ -1955,3 +1955,15 @@
   :area_code: 787|939
   :local_number_format: \d{7}
   :number_format: \d{10}
+-
+  :country_code: '7'
+  :national_dialing_prefix: '8'
+  :char_2_code: '8'
+  :iso_3166_code: KZ
+  :name: Kazakhstan
+  :international_dialing_prefix: '810'
+  :area_code: '[6|7]\d{2}'
+  :local_number_format: \d{5,9}
+  :mobile_format: '[6|7]\d{9}'
+  :number_format: \d{10}
+
