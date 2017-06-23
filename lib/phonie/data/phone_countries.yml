@@ -552,7 +552,14 @@
   :name: Turkmenistan
   :international_dialing_prefix: '810'
   :area_code: '12|66|67|68|69|\d{3}'
-  :number_format: '\d{6,7}'
+  :local_number_format: \d{6,7}
+  :mobile_format: '(?<=6[6-9])\d{6}'
+  :number_format: '12\d{6}|\d{5}'
+
+
+ :local_number_format: \d{5,9}
+  :mobile_format: '[9|5]\d{9}'
+  :number_format: \d{10}
 -
   :country_code: '599'
   :national_dialing_prefix: '0'
