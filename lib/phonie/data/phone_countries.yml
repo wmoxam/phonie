@@ -551,8 +551,8 @@
   :iso_3166_code: TM
   :name: Turkmenistan
   :international_dialing_prefix: '810'
-  :area_code: '12|66|67|68|69|\d{3}'
-  :local_number_format: \d{6,7}
+  :area_code: '12|6[6-9]|\d{3}'
+  :local_number_format: \d{5,6}
   :mobile_format: '6[6-9]\d{6}'
   :number_format: '12\d{6}|\d{8}'
 -
