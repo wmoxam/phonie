@@ -1741,6 +1741,10 @@
   :iso_3166_code: MK
   :name: Macedonia, the Former Yugoslav Republic Of
   :international_dialing_prefix: '00'
+  :area_code: '[27]|[34]\d|[58]\d\d'
+  :local_number_format: '\d{5,7}'
+  :mobile_format: '7\d+'
+  :number_format: '\d{8}'
 -
   :country_code: '670'
   :national_dialing_prefix: None
