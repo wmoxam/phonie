@@ -3,3 +3,5 @@ pt-BR:
     messages:
       invalid_phone_number: Número de telefone inválido
       invalid_mobile_phone_number: Número de celular inválido
+      invalid_country_phone_number: Código do país inválido
+

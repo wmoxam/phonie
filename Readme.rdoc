@@ -95,6 +95,10 @@ Similarly you can validate if a number is a mobile number via:
 
     validates :mobile_number, mobile_phone: true
 
+Similarly you can validate if a number is in your default country via:
+
+    validates :mobile_number, default_country_phone: true
+
 = TODO
 Add definitions for more countries
 

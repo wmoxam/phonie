@@ -6,6 +6,12 @@ class PhoneTest < Phonie::TestCase
     assert Phonie::Phone.is_mobile?("918124452900")
   end
 
+  def test_is_default_country?
+    Phonie.configuration.default_country_code = '1'
+
+    assert Phonie::Phone.is_default_country?("18124452900")
+  end
+
   def test_number_without_country_code_initialize
     pn = Phonie::Phone.new '5125486', '91'
     assert !pn.valid?

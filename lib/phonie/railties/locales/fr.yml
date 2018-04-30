@@ -3,3 +3,5 @@ fr:
     messages:
       invalid_phone_number: Numéro de téléphone invalide
       invalid_mobile_phone_number: Téléphone cellulaire invalide
+      invalid_country_phone_number: Code de pays incorrect
+

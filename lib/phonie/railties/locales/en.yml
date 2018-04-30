@@ -3,3 +3,4 @@ en:
     messages:
       invalid_phone_number: Invalid phone number
       invalid_mobile_phone_number: Invalid mobile phone number
+      invalid_country_phone_number: Invalid country code
