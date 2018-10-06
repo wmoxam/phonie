@@ -11,3 +11,9 @@ class MobilePhoneValidator < ActiveModel::EachValidator
     object.errors.add(attribute, :invalid_mobile_phone_number) unless Phonie::Phone.valid?(value) && Phonie::Phone.is_mobile?(value)
   end
 end
+
+class DefaultCountryPhoneValidator < ActiveModel::EachValidator
+  def validate_each(object, attribute, value)
+    object.errors.add(attribute, :invalid_country_phone_number) unless Phonie::Phone.valid?(value) && Phonie::Phone.is_default_country?(value)
+  end
+end

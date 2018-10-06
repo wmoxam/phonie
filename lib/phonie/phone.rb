@@ -65,6 +65,11 @@ module Phonie
       pn && pn.is_mobile?
     end
 
+    def self.is_default_country?(string, options = {})
+      pn = parse(string, options)
+      pn && pn.has_default_country_code?
+    end
+
     def area_code_long
       "0" + area_code if area_code
     end
